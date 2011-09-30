@@ -14,9 +14,9 @@
 
 \title{Theoretische Grundlagen der Informatik}
 \subtitle{Tutorium}
-\author{Moritz von Looz, Simon Stroh}
+\author{Sarah Lutteropp}
 
-\institute[ITI]{Intitute für Theoretische Informatik}
+\institute[ITI]{Institut für Theoretische Informatik}
 
 \TitleImage[height=\titleimageht]{images/tmaschine.png}
 
@@ -52,7 +52,7 @@
 \begin{frame}
 	\frametitle{Organisatorisches - Zum Tutorium}
 	\begin{itemize}
-		\item Stoff soll wiederholt werdet
+		\item Stoff soll wiederholt werden
 		\item Dabei Fokus auf Übungsbetrieb
 		\item Fragen/Vorschläge/Anmerkungen wilkommen!
 		%\item Wer Tee möchte darf sich bedienen :)
@@ -62,7 +62,7 @@
 \subsection{Formale Sprachen}
 \begin{frame}
 	\frametitle{Kurze Wiederholung: Formale Sprachen}
-	Eine \emph{Formale Sprache} $L$ ist eine Teilmenge aller Wörtern über einem endlichen Alphabet $\Sigma$. Also $L \subseteq \Sigma^*$\\[0.3cm]
+	Eine \emph{Formale Sprache} $L$ ist eine Teilmenge aller Wörter über einem endlichen Alphabet $\Sigma$. Also $L \subseteq \Sigma^*$\\[0.3cm]
 	Beispiele:
 	\KITframe[yes the background would be nice in gray, thanks!]
 		{\parbox{\textwidth}{\begin{itemize}
@@ -77,7 +77,7 @@ Im Allgemeinen kann man Formale Sprachen sehr frei angeben:
 		{\parbox{\textwidth}{\begin{itemize}
 			\item $\Sigma = \{ 0, 1 \}, L = \{w|\,w \in \Sigma^*, w \mbox{ hat eine gerade Anzahl an $1$en}\}$
 			\begin{itemize}
-			\item Die Menge aller Wörter die eine gerade Anzahl an Einsen enthalten.
+			\item Die Menge aller Wörter, die eine gerade Anzahl an Einsen enthalten.
 			\end{itemize}
 		\end{itemize}}
 	}
@@ -85,7 +85,7 @@ Im Allgemeinen kann man Formale Sprachen sehr frei angeben:
 \subsection{Reguläre Sprachen}
 \begin{frame}
  \frametitle{Wiederholung der Wiederholung: Reguläre Sprachen}
-        Eine Sprache \(L\subseteq\Sigma^*\) heißt regulär, wenn für sie eine der folgenden Punkte gilt:
+        Eine Sprache \(L\subseteq\Sigma^*\) heißt regulär, wenn für sie einer der folgenden Punkte gilt:
 
 \begin{itemize}
 \item \begin{itemize}Verankerung
@@ -103,7 +103,7 @@ Beispiel:
 \(\Sigma = \{a,b\}\)
 	\KITframe[Yeah, I think I'll stick to gray as a background color. Thanks again!]
 		{\parbox{\textwidth}{\begin{itemize}
-		\item \(L_1 = \{w| w \in \Sigma^*, w \mbox{w besteht aus einer graden Anzahl $a$s}\)
+		\item \(L_1 = \{w| w \in \Sigma^*, w \mbox{w besteht aus einer geraden Anzahl $a$s}\)
 		\item \(L_2 =\{w| w \in \Sigma^*, w \mbox{w enthält gleich viele $a$s und $b$s.}\)		
 		\end{itemize}}
 	}
@@ -112,7 +112,7 @@ Beispiel:
 
 \subsection{Deterministische endliche Automaten}
 \begin{frame}
-\frametitle{Deterministische Endliche Automaten}
+\frametitle{Deterministische endliche Automaten}
         Ein deterministischer endlicher Automat $M$ ist ein 5-Tupel
         \[
         M= (Q,\Sigma,\delta,S,F).
@@ -193,7 +193,7 @@ Beispiel:
 \end{frame}
 \subsection{Nichtdeterministische endliche Automaten}
 \begin{frame}
-\frametitle{Nichtdeterministische Endliche Automaten}
+\frametitle{Nichtdeterministische endliche Automaten}
         Ein nichtdeterministischer endlicher Automat $M$ ist ein 5-Tupel
         \[
         M= (Q,\Sigma,\delta,S,F).
@@ -319,7 +319,7 @@ Ein \textcolor{red}{neuer Zustand} entsteht, wenn man von einem alten Zustand du
 }
 \frame{
 \frametitle{Potenzmengenkonstruktion}
-Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen die einen Endzustand enthalten, sind wiederum im neuen Automaten Endzustände
+Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen, die einen Endzustand enthalten, sind wiederum im neuen Automaten Endzustände
 \begin{figure}[H]
 \begin{center}
  \begin{tikzpicture}[node distance=1.7cm]
@@ -429,13 +429,13 @@ Sei $A=(Q,\Sigma, \delta, s, \{q_f\})$ ein NEA, derart dass es keine zu $s$ hinf
 \subsection{Konstruktion eines regulären Ausdrucks}
 \begin{frame}
 \frametitle{Konstruktion eines RA aus einem DEA}
-Wir wissen, jeder DEA hat einen Regulären Ausdruck, der genau die Sprache beschreibt, die der Automat akzeptiert, wie konstruiert man nun diesen RA aus dem DEA?\\[0.6cm]
+Wir wissen: Jeder DEA hat einen regulären Ausdruck, der genau die Sprache beschreibt, die der Automat akzeptiert. Wie konstruiert man nun diesen RA aus dem DEA?\\[0.6cm]
 \textbf{Idee:} Betrachte die Sprachen $L_{q_r,i,q_t}$, definiert als \( w \in \Sigma^*\) mit $w$ überführt $q_r$ in $q_t$ unter Benutzung der Zwischenzustände $\{q_1,\ldots,q_i\}$
 \begin{itemize}
 \item Es ist $L = \cup_{f\in F} L_{s,n,f}$
 \item Es ist weiterhin $L_{q_r,i+1,q_t} = L_{q_r,i,q_t} \cup (L_{q_r,i,q_{i+1}}(L_{q_{i+1},i,q_{i+1}})^*L_{q_{i+1},i,q_t})$
 \item Letztlich ist: $L_{q_r, 0, q_t}$ immer regulär, das sind die Zeichen mit denen man ohne weitere Zustände zu verwenden von $q_r$ nach $q_t$ kommt (sowie $\varepsilon$ falls $r = t$).
-\item Unter Benutzung dieser Punkte, kann man nun einen Regulären Ausdruck zu einem DEA Konstruieren.
+\item Unter Benutzung dieser Punkte, kann man nun einen regulären Ausdruck zu einem DEA Konstruieren.
 \end{itemize}
 \end{frame}
 \begin{frame}
@@ -512,7 +512,7 @@ reguläre Sprache, die folgender deterministische endliche Automat erkennt:
 \begin{frame}
 \frametitle{Pumping Lemma}
 \begin{exampleblock}{Pumping Lemma}
-Sei $L$ eine reguläre Sprache, dann existiert eine Zahl $n \in \mathbb{N}$, so dass für jedes wort $w \in L$ mit $\left|w \right| > n$ eine Darstellung $$w = uvx$$ existiert, so dass folgende Eigenschaften erfüllt sind:
+Sei $L$ eine reguläre Sprache, dann existiert eine Zahl $n \in \mathbb{N}$, so dass für jedes Wort $w \in L$ mit $\left|w \right| > n$ eine Darstellung $$w = uvx$$ existiert, sodass folgende Eigenschaften erfüllt sind:
 
 \begin{enumerate}
 \item $v \neq \varepsilon$ 
@@ -524,7 +524,7 @@ So folgt: Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \begin{frame}
 \frametitle{Pumping Lemma: Übersicht}
 \begin{itemize}
-\item Für jede Reguläre Sprache gilt das Pumping-Lemma, nicht jede Sprache für die das Pumping-Lemma gilt ist regulär!
+\item Für jede reguläre Sprache gilt das Pumping-Lemma, nicht jede Sprache für die das Pumping-Lemma gilt ist regulär!
 \item In der Übung wird üblicherweise die Kontraposition des Pumping-Lemmas verwendet. Man zeigt für eine Sprache, dass das Pumping-Lemma \emph{nicht} erfüllt ist, und daraus folgt, dass diese Sprache \emph{nicht} regulär sein kann.
 \begin{itemize}
 \item Konkret: Finden wir für \emph{jedes} $n$ \emph{ein} $w$ mit $\left|w\right| > n$, so dass für \emph{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$, ein $i \in \mathbb{N}_0$ mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
