@@ -1,5 +1,1 @@
 Hier finden sich die LaTeX-Quellen für das TGI-Tutorium von Sarah Lutteropp im WS 2011/12 am KIT. Der Foliensatz basiert auf den Folien der TGI-Tutorien im WS 2010/11 von Simon Stroh und Moritz v. Looz.
-
-HOWTO
-
-Bis wir eine Makefile haben, kann man die Folien einfach mit ./build.sh generieren. :)
