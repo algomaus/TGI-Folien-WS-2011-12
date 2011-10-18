@@ -43,7 +43,7 @@
 \begin{frame}
 	\frametitle{\textcolor{KITblue}{Organisatorisches - Zum Übungsbetrieb}}
 	\begin{itemize}
-		\item \textbf{Abgabe:} \emph{Handschriftlich} in Zweiergruppen.
+		\item \textbf{Abgabe:} \textcolor{KITblue}{Handschriftlich} in Zweiergruppen.
 		\item \textbf{Schein:} 
 		\begin{itemize}
 			\item Klausurbonus
@@ -72,7 +72,7 @@
 \subsection{Formale Sprachen}
 \begin{frame}
 	\frametitle{\textcolor{KITblue}{Kurze Wiederholung: Formale Sprachen}}
-	Eine \emph{Formale Sprache} $L$ ist eine Teilmenge aller Wörter über einem endlichen Alphabet $\Sigma$. Also $L \subseteq \Sigma^*$\\[0.3cm]
+	Eine \textcolor{KITblue}{Formale Sprache} $L$ ist eine Teilmenge aller Wörter über einem endlichen Alphabet $\Sigma$. Also $L \subseteq \Sigma^*$\\[0.3cm]
 	Beispiele:
 	\KITframe[yes the background would be nice in gray, thanks!]
 		{\parbox{\textwidth}{\begin{itemize}
@@ -215,7 +215,7 @@ Beispiel:
         \item $S$:   Startzustand $\in Q$
         \item $F$:   Endzustandsmenge $\subseteq Q$
         \end{itemize}
-	Damit der NEA ein Wort akzeptiert, muss es \emph{einen} akzeptierenden Weg geben.
+	Damit der NEA ein Wort akzeptiert, muss es \textcolor{KITblue}{einen} akzeptierenden Weg geben.
 \end{frame}
 \begin{frame}
 	\frametitle{\textcolor{KITblue}{NEA: Beispiel}}
@@ -535,9 +535,9 @@ So folgt: Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \frametitle{\textcolor{KITblue}{Pumping Lemma: Übersicht}}
 \begin{itemize}
 \item Für jede reguläre Sprache gilt das Pumping-Lemma, nicht jede Sprache für die das Pumping-Lemma gilt ist regulär!
-\item In der Übung wird üblicherweise die Kontraposition des Pumping-Lemmas verwendet. Man zeigt für eine Sprache, dass das Pumping-Lemma \emph{nicht} erfüllt ist, und daraus folgt, dass diese Sprache \emph{nicht} regulär sein kann.
+\item In der Übung wird üblicherweise die Kontraposition des Pumping-Lemmas verwendet. Man zeigt für eine Sprache, dass das Pumping-Lemma \textcolor{KITblue}{nicht} erfüllt ist, und daraus folgt, dass diese Sprache \textcolor{KITblue}{nicht} regulär sein kann.
 \begin{itemize}
-\item Konkret: Finden wir für \emph{jedes} $n$ \emph{ein} $w$ mit $\left|w\right| > n$, so dass für \emph{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$, ein $i \in \mathbb{N}_0$ mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
+\item Konkret: Finden wir für \textcolor{KITblue}{jedes} $n$ \textcolor{KITblue}{ein} $w$ mit $\left|w\right| > n$, so dass für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$, ein $i \in \mathbb{N}_0$ mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
 \item \textbf{Wichtig:} Alle Quantoren werden umgekehrt.
 \end{itemize}
 \end{itemize}
@@ -549,7 +549,7 @@ Sei $\Sigma = \{a, b\}$ und $L = \{a^nb^n\,|\,n\geq0\}$. (Also $L = \{\varepsilo
 \begin{enumerate}
 \item Für ein $n$ wähle das Wort $w = a^nb^n$.
 \item Es ist also $\left|w\right| > n$.
-\item Nun ist aber für \emph{jede} Darstellung $w = uvx$ mit $\left|uv\right| \leq n$ und $v \neq \varepsilon$ $v = a^m$ mit $m \geq 0$. Demnach ist $uv^0x = a^lb^n \neq L$, da $l < n$.
+\item Nun ist aber für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $\left|uv\right| \leq n$ und $v \neq \varepsilon$ $v = a^m$ mit $m \geq 0$. Demnach ist $uv^0x = a^lb^n \neq L$, da $l < n$.
 \item Daher kann $L$ nicht regulär sein.
 \end{enumerate}
 
@@ -655,7 +655,7 @@ Nein!
   \end{itemize}
  \end{block}
  \begin{block}{Definition (Äquivalenz):}
-  Zwei Zustände $p$ und $q$ eines deterministischen endlichen Automaten heißen \emph{äquivalent} ($p \equiv $q),
+  Zwei Zustände $p$ und $q$ eines deterministischen endlichen Automaten heißen \textcolor{KITblue}{äquivalent} ($p \equiv $q),
   wenn für alle Wörter $w\in\Sigma^*$ gilt:
   \[
    \delta(p, w)\in F \leftrightarrow \delta(q, w)\in F
@@ -859,7 +859,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Nerode-Relation}}
  \begin{block}{Definition 2.25}
- Für eine Sprache \(L \subseteq \Sigma^*\) ist die \emph{Nerode-Relation} \(R_L\) definiert durch:
+ Für eine Sprache \(L \subseteq \Sigma^*\) ist die \textcolor{KITblue}{Nerode-Relation} \(R_L\) definiert durch:
   
   für \(x, y \in \Sigma^*\) ist $x$ $R_L$ $y$ genau dann wenn \((xz \in L \leftrightarrow yz \in L)\) für alle $z \in \Sigma^*$ gilt.
  \end{block}
@@ -933,8 +933,8 @@ Daher ist ein abstrakteres Modell hilfreich \\
 $\rightarrow$ Turingmaschine.
 \pause
 \begin{block}{Turingmaschine}
-Die Turingmaschine besteht aus einem beidseitig \emph{unendlichen} Eingabe- und Rechenband
-mit einem freibeweglichen Lese-/Schreibkopf, der von einer \emph{endlichen} Kontrolle gesteuert wird. 
+Die Turingmaschine besteht aus einem beidseitig \textcolor{KITblue}{unendlichen} Eingabe- und Rechenband
+mit einem freibeweglichen Lese-/Schreibkopf, der von einer \textcolor{KITblue}{endlichen} Kontrolle gesteuert wird. 
 \end{block}
 \end{frame}
 \begin{frame}
@@ -1007,11 +1007,11 @@ getrennte Binärworte aus $\{0,1\}^*$ addiert.
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Definitionen zur TM (Vorlesung)}}
  \begin{enumerate}
-  \item Eine TM \emph{akzeptiert} eine Eingabe $w \in \Sigma^*$, wenn sie nach Lesen von $w$ in einem Zustand aus $F$ stoppt.
-  \item Sie \emph{akzeptiert} eine Sprache $L \subseteq \Sigma^*$ genau dann, wenn sie ausschließlich Wörter $w$ aus $L$ als Eingabe akzeptiert.
-  \item Eine Sprache $L \subseteq \Sigma^*$ heißt \emph{rekursiv} oder \emph{entscheidbar}, wenn es eine Turingmaschine gibt, die auf allen Eingaben stoppt und
+  \item Eine TM \textcolor{KITblue}{akzeptiert} eine Eingabe $w \in \Sigma^*$, wenn sie nach Lesen von $w$ in einem Zustand aus $F$ stoppt.
+  \item Sie \textcolor{KITblue}{akzeptiert} eine Sprache $L \subseteq \Sigma^*$ genau dann, wenn sie ausschließlich Wörter $w$ aus $L$ als Eingabe akzeptiert.
+  \item Eine Sprache $L \subseteq \Sigma^*$ heißt \textcolor{KITblue}{rekursiv} oder \textcolor{KITblue}{entscheidbar}, wenn es eine Turingmaschine gibt, die auf allen Eingaben stoppt und
 	ein Wort $w \in \Sigma^*$ genau dann akzeptiert, wenn $w \in L$ gilt.
-  \item Eine Sprache $L \subseteq \Sigma^*$ heißt \emph{rekursiv-aufzählbar} oder \emph{semi-entscheidbar}, wenn es eine Turingmaschine gibt, 
+  \item Eine Sprache $L \subseteq \Sigma^*$ heißt \textcolor{KITblue}{rekursiv-aufzählbar} oder \textcolor{KITblue}{semi-entscheidbar}, wenn es eine Turingmaschine gibt, 
 	die genau $w$ genau dann akzeptiert, wenn $w \in L$ gilt. Das Verhalten der Turingmaschine für Eingaben $w \not\in L$ ist damit nicht definiert.
 	Sie stoppt entweder nicht in einem Endzustand oder aber stoppt garnicht.
  \end{enumerate}
@@ -1322,13 +1322,13 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Probleme}}
  \begin{block}{Definition (Skript)}
- Ein \emph{Problem $\Pi$} ist gegeben durch:
+ Ein \textcolor{KITblue}{Problem $\Pi$} ist gegeben durch:
  \begin{enumerate}
   \item eine allgemeine Beschreibung aller vorkommenden Parameter;
   \item eine genaue Beschreibung der Eigenschaften, welche die Lösung haben soll
  \end{enumerate}
  \end{block}
- Ein \emph{Problembeispiel} \textit{I} \emph{(Instanz)} von $\Pi$ erhalten wir, indem wir die Parameter von $\Pi$ festlegen.
+ Ein \textcolor{KITblue}{Problembeispiel} \textit{I} \textcolor{KITblue}{(Instanz)} von $\Pi$ erhalten wir, indem wir die Parameter von $\Pi$ festlegen.
 \end{frame}
 
 \begin{frame}
@@ -1405,12 +1405,12 @@ Formulieren Sie ein zu Ihrem Optimierungsproblem gehörendes Entscheidungsproble
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Kodierungsschemata (VL)}}
  \begin{block}{Definition Kodierungsschema}
- Ein \emph{Kodierungsschema} s ordnet jedem Problembeispiel eines Problems eine Zeichenkette oder Kodierung über einem Alphabet $\Sigma$ zu. 
+ Ein \textcolor{KITblue}{Kodierungsschema} s ordnet jedem Problembeispiel eines Problems eine Zeichenkette oder Kodierung über einem Alphabet $\Sigma$ zu. 
  Die Inputlänge eines Problembeispiels ist die Anzahl der Symbole seiner Kodierung.
  Dabei gibt es natürliche verschiedene Kodierungsschemata für ein bestimmtes Problem.
  \end{block}
  \begin{block}{Äquivalenz}
-  Zwei Kodierungsschemata $s_1$, $s_2$ heißen \emph{äquivalent} bezüglich eines Problems $\Pi$, falls es Polynome p1, p2 gibt, so dass gilt:
+  Zwei Kodierungsschemata $s_1$, $s_2$ heißen \textcolor{KITblue}{äquivalent} bezüglich eines Problems $\Pi$, falls es Polynome p1, p2 gibt, so dass gilt:
   \[
    (|s_1(I)| = n \Rightarrow |s_2(I)| \leq p_2(n))\mbox{ und } (|s_2(I)| = m \Rightarrow |s_1(I)| \leq p_1(m))
   \]
@@ -1520,7 +1520,7 @@ Geben Sie die Laufzeit Ihrer Turing-Maschine asymptotisch an. Ist $L_1$ in $\mat
 
 \begin{block}{Version aus der Vorlesung}
 Wir definieren eine nichtdeterministische Turingmaschine als Erweiterung einer deterministischen.
- Wir erweiteren die TM um ein \emph{Orakelmodul}, das bevor der deterministischen Berechnung Zeichen auf das Band links von der Eingabe schreibt,
+ Wir erweiteren die TM um ein \textcolor{KITblue}{Orakelmodul}, das bevor der deterministischen Berechnung Zeichen auf das Band links von der Eingabe schreibt,
  danach verfährt die Maschine wie eine normale TM.
  Die NDTM akzeptiert genau die Wörter, für die es eine Ausgabe des Orakelmoduls gibt,
  sodass der deterministische Anteil der Machine das Wort akzeptiert.
@@ -1552,7 +1552,7 @@ $\mathcal{NP}$ ist (analog zu $\mathcal{P}$) die Klasse aller Sprachen die von e
 \item Überprüfe ob Zeuge korrekt. (in Polyzeit)
 \item Falls ja, halte mit Ausgabe $x \in L$
 \end{enumerate}
-Man spricht daher auch von den \emph{effizient verifizierbaren} Entscheidungsproblemen.
+Man spricht daher auch von den \textcolor{KITblue}{effizient verifizierbaren} Entscheidungsproblemen.
 \end{frame}
 
 \begin{frame}
@@ -1744,7 +1744,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \textbf{Frage:} Existiert eine erfüllende Wahrheitsbelegung von $C$?
 \end{block}
 \begin{itemize}
-\item \emph{Das} Standardproblem.
+\item \textcolor{KITblue}{Das} Standardproblem.
 \item Es gibt viele hochoptimierte "SAT-Solver". Steht man in der Praxis vor einem $\mathcal{NP}$-Problem, kann es sich anbieten die Transformation auf $SAT$ durchzuführen.
 \end{itemize}
 \end{frame}
@@ -1754,7 +1754,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \textbf{Gegeben:}
 \begin{itemize}
  \item Menge $U$ von Variablen
- \item Menge $C$ von Klauseln über $U$, jede Klausel enthält genau \emph{drei} Literale
+ \item Menge $C$ von Klauseln über $U$, jede Klausel enthält genau \textcolor{KITblue}{drei} Literale
 \end{itemize}
 \textbf{Frage:} Existiert eine erfüllende Wahrheitsbelegung von $C$?
 \end{block}
@@ -2093,7 +2093,7 @@ Dann ist
   Ein Suchproblem $\Pi$ wird beschrieben durch
   \begin{itemize}
    \item die Menge der Problembeispiele oder Instanzen $D_\Pi$
-   \item für $I\in D_\Pi$ die Menge $S_\Pi(I)$ \emph{aller} Lösungen von $I$.
+   \item für $I\in D_\Pi$ die Menge $S_\Pi(I)$ \textcolor{KITblue}{aller} Lösungen von $I$.
   \end{itemize}
  \end{block}
 \begin{block}{Lösung}
@@ -2153,14 +2153,14 @@ Seien $R, R'$ Relationen über $\Sigma^*$. Eine Turing-Reduktion $\propto_T$ von
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Aufzählungsprobleme}}
  \begin{block}{Definition}
-  Ein \emph{Aufzählungsproblem} $\Pi$ ist gegeben durch
+  Ein \textcolor{KITblue}{Aufzählungsproblem} $\Pi$ ist gegeben durch
   \begin{itemize}
    \item die Menge der Problembeispiele $D_\Pi$
    \item für $I \in D_\Pi$ die Menge $S_\Pi(I)$ aller Lösungen von $I$
   \end{itemize}
   \end{block}
   \begin{block}{Lösung}  
-  Die \emph{Lösung} der Instanz $I$ eines Aufzählungsproblem $\Pi$ besteht in der Angabe der Kardinalität $|S_\Pi(I)|$ von $\Pi$.
+  Die \textcolor{KITblue}{Lösung} der Instanz $I$ eines Aufzählungsproblem $\Pi$ besteht in der Angabe der Kardinalität $|S_\Pi(I)|$ von $\Pi$.
  \end{block}
 \end{frame}
 
@@ -2208,10 +2208,10 @@ Existieren $x_1, ..., x_n \in \mathbb{N}_0$, so dass\\
 \begin{frame}
 \frametitle{\textcolor{KITblue}{Aufgabe}}
 Sei $G=(V, E)$ ein ungerichter Graph und $K \leq |V|$ eine natürliche Zahl. 
-Ein \emph{DOMINATING SET} von $G$ ist eine Teilmenge $C \subseteq V$, so dass jeder Knoten $v$ entweder selbst in $C$ ist oder zu einem Knoten $w$ in $C$ adjazent ist. 
+Ein \textcolor{KITblue}{DOMINATING SET} von $G$ ist eine Teilmenge $C \subseteq V$, so dass jeder Knoten $v$ entweder selbst in $C$ ist oder zu einem Knoten $w$ in $C$ adjazent ist. 
 Gibt es ein Vertex Cover von $G$, das höchstens $k$ Knoten enthält?
 
-Formulieren Sie DOMINATING SET als \emph{Integer Program} 
+Formulieren Sie DOMINATING SET als \textcolor{KITblue}{Integer Program} 
 Hinweis: Nehmen Sie dabei an, dass alle Koeffizienten $a_{ij}, b_i, c_j, B$ sowie die Variablen $x_i$ in $\mathbb{Z}$ liegen. Das bedeutet, dass auch negative Koeffizienten erlaubt sind.  
 \end{frame}
 
@@ -2330,7 +2330,7 @@ Um das Leere Wort in der Sprache zu erlauben, lässt sich die Grammatik leicht m
 \begin{enumerate}
 \item Für alle $\textcolor{red}{a} \in \mathcal{T}$ und für alle Produktionen auf deren rechter Seite $\textcolor{red}{a}$ vorkommt 
 (außer für $V  \rightarrow \textcolor{red}{a}$, mit $V \in\mathcal{V}$),
-wird jedes Vorkommen von $\textcolor{red}{a}$ durch ein \emph{neues} Nichtterminalsymbol $\textcolor{blue}{A}$ ersetzt
+wird jedes Vorkommen von $\textcolor{red}{a}$ durch ein \textcolor{KITblue}{neues} Nichtterminalsymbol $\textcolor{blue}{A}$ ersetzt
 %(und $A$ in die Variablenmenge aufgenommen)
 und die Produktion $\textcolor{blue}{A} \rightarrow \textcolor{red}{a}$ wird hinzugefügt.
 \end{enumerate}
@@ -2373,7 +2373,7 @@ Z &\rightarrow X\\
 \item %Die Grammatik $\varepsilon$-frei machen, d. h. $\varepsilon$ darf nur bei $\mathcal{S} \rightarrow \varepsilon$ vorkommen.
 In diesem Schritt werden alle Produktionen der Form $\textcolor{red}{V} \rightarrow \textcolor{red}{\varepsilon}$
 f"ur $V \in \mathcal{V}, V \not= \mathcal{S}$ entfernt. Dazu müssen diese Produktion aber
-vorher \emph{rekursiv} durch ihre ``Vorwegnahme'' mit den anderen Produktionen
+vorher \textcolor{KITblue}{rekursiv} durch ihre ``Vorwegnahme'' mit den anderen Produktionen
 ``verschmolzen'' werden, es wird also für jede Produktion mit einem der obigen $V$
 auf der rechten Seite eine \textcolor{blue}{neue Produktion} ohne dieses $V$ hinzugefügt.
 \end{enumerate}
@@ -2420,7 +2420,7 @@ C &\rightarrow c\\
 \setcounter{enumi}{2}
 \item
 Für Produktionen mit mehr als zwei
-Variablen rechts werden \textcolor{blue}{ \emph{neue} Nichterminale} eingeführt
+Variablen rechts werden \textcolor{blue}{ \textcolor{KITblue}{neue} Nichterminale} eingeführt
 und dazu \textcolor{blue}{passende Produktionen} hinzugefügt.
 \end{enumerate}
 
@@ -2818,7 +2818,7 @@ Ein (nichtdeterministischer) \textbf{Kellerautomat} (NPDA bzw PDA, Pushdown Auto
 \begin{frame}
 \frametitle{\textcolor{KITblue}{Zu Kellerautomaten}}
 \begin{itemize}
-\item Akzeptieren wenn \emph{entweder} der Stack leer ist, \emph{oder} wenn der Automat in einen akzeptierenden Zustand kommt
+\item Akzeptieren wenn \textcolor{KITblue}{entweder} der Stack leer ist, \textcolor{KITblue}{oder} wenn der Automat in einen akzeptierenden Zustand kommt
 \item Sind im allgemeinen Nichtdeterministisch
 \item Man kann Endzustände auch aus der Definition weglassen und alternativ verlangen der Automat akzeptiert genau bei leerem Keller
 \item Man kann sogar alle Zustände bis auf einen weglassen und alles in die Kellerbelegung kodieren
