@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \usetheme[deutsch]{KIT}
 
-\KITfoot{Tutoriumsmaterial von Simon Stroh und Moritz v. Looz}
+\KITfoot{Tutorium Nr. 19}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{ulem}
@@ -10,7 +10,6 @@
 \usepackage{tikz}
 \usetikzlibrary{automata}
 \usenavigationsymbols
-
 
 \title{Theoretische Grundlagen der Informatik}
 \subtitle{Tutorium}
@@ -30,10 +29,19 @@
 \ifthenelse{1=0}{}{
 %%%%%%%%%%%%%%%%%%%
 
-
 \section{Organisatorisches}
+
 \begin{frame}
-	\frametitle{Organisatorisches - Zum Übungsbetrieb}
+	\frametitle{\textcolor{KITblue}{Vorstellung}}
+	\begin{itemize}
+		\item Sarah Lutteropp
+		\item 19 Jahre, 3. Semester Informatik Bachelor
+		\item There will be cake \ldots
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\textcolor{KITblue}{Organisatorisches - Zum Übungsbetrieb}}
 	\begin{itemize}
 		\item \textbf{Abgabe:} \emph{Handschriftlich} in Zweiergruppen.
 		\item \textbf{Schein:} 
@@ -42,15 +50,16 @@
 			\item Wahrscheinlich ein Notenschritt
 			\item Ab 50\% der erreichbaren Punkte
 		\end{itemize}
-		\item Tutoriumsmaterial und Aktueller Punktestand online.
+		\item Tutoriumsmaterial und aktueller Punktestand online.
 		\begin{itemize}
 			\item URL wird noch bekanntgegeben
 			\item Wer Punkte online einsehen will, email in Liste eintragen
 		\end{itemize}
 	\end{itemize}
 \end{frame}
+
 \begin{frame}
-	\frametitle{Organisatorisches - Zum Tutorium}
+	\frametitle{\textcolor{KITblue}{Organisatorisches - Zum Tutorium}}
 	\begin{itemize}
 		\item Stoff soll wiederholt werden
 		\item Dabei Fokus auf Übungsbetrieb
@@ -58,10 +67,11 @@
 		%\item Wer Tee möchte darf sich bedienen :)
 	\end{itemize}
 \end{frame}
+
 \section{Endliche Automaten und reguläre Sprachen}
 \subsection{Formale Sprachen}
 \begin{frame}
-	\frametitle{Kurze Wiederholung: Formale Sprachen}
+	\frametitle{\textcolor{KITblue}{Kurze Wiederholung: Formale Sprachen}}
 	Eine \emph{Formale Sprache} $L$ ist eine Teilmenge aller Wörter über einem endlichen Alphabet $\Sigma$. Also $L \subseteq \Sigma^*$\\[0.3cm]
 	Beispiele:
 	\KITframe[yes the background would be nice in gray, thanks!]
@@ -84,7 +94,7 @@ Im Allgemeinen kann man Formale Sprachen sehr frei angeben:
 \end{frame}
 \subsection{Reguläre Sprachen}
 \begin{frame}
- \frametitle{Wiederholung der Wiederholung: Reguläre Sprachen}
+ \frametitle{\textcolor{KITblue}{Wiederholung der Wiederholung: Reguläre Sprachen}}
         Eine Sprache \(L\subseteq\Sigma^*\) heißt regulär, wenn für sie einer der folgenden Punkte gilt:
 
 \begin{itemize}
@@ -112,7 +122,7 @@ Beispiel:
 
 \subsection{Deterministische endliche Automaten}
 \begin{frame}
-\frametitle{Deterministische endliche Automaten}
+\frametitle{\textcolor{KITblue}{Deterministische endliche Automaten}}
         Ein deterministischer endlicher Automat $M$ ist ein 5-Tupel
         \[
         M= (Q,\Sigma,\delta,S,F).
@@ -126,7 +136,7 @@ Beispiel:
         \end{itemize}
 \end{frame}
 \begin{frame}
-	\frametitle{DEA: Aufgaben}
+	\frametitle{\textcolor{KITblue}{DEA: Aufgaben}}
 	\begin{enumerate}
 	\item 
 		Lösen Sie folgendes Rätsel mit Hilfe eines deterministischen
@@ -147,7 +157,7 @@ Beispiel:
 	\end{enumerate}
 \end{frame}
 \begin{frame}
-\frametitle{DEA: Aufgabe}
+\frametitle{\textcolor{KITblue}{DEA: Aufgabe}}
 \begin{enumerate}
 \setcounter{enumi}{1}
 \item Geben Sie einen regulären Ausdruck für die vom DEA mit nachfolgendem Zustandsgraphen erkannte Sprache an:
@@ -178,7 +188,7 @@ Beispiel:
 	\end{enumerate}
 \end{frame}
 \begin{frame}
-	\frametitle{DEA: Lösung}
+	\frametitle{\textcolor{KITblue}{DEA: Lösung}}
 	\begin{enumerate}
 	\setcounter{enumi}{2}
 	\item Idee
@@ -193,7 +203,7 @@ Beispiel:
 \end{frame}
 \subsection{Nichtdeterministische endliche Automaten}
 \begin{frame}
-\frametitle{Nichtdeterministische endliche Automaten}
+\frametitle{\textcolor{KITblue}{Nichtdeterministische endliche Automaten}}
         Ein nichtdeterministischer endlicher Automat $M$ ist ein 5-Tupel
         \[
         M= (Q,\Sigma,\delta,S,F).
@@ -208,7 +218,7 @@ Beispiel:
 	Damit der NEA ein Wort akzeptiert, muss es \emph{einen} akzeptierenden Weg geben.
 \end{frame}
 \begin{frame}
-	\frametitle{NEA: Beispiel}
+	\frametitle{\textcolor{KITblue}{NEA: Beispiel}}
 	\begin{figure}
 	\begin{tikzpicture}
 	\node[draw,circle] (q_0) at (0,0) {$q_0$};
@@ -223,7 +233,7 @@ Beispiel:
 	Bei Eingabe von $b$ im Zustand $q_1$ gibt es mehrere Möglichkeiten.
 \end{frame}
 \begin{frame}
-	\frametitle{NEA: Aufgabe}
+	\frametitle{\textcolor{KITblue}{NEA: Aufgabe}}
  Welche Sprache akzeptiert der nichtdeterministische endliche Automat
  zu dem folgenden Zustandsgraphen?
 \begin{center}
@@ -249,7 +259,7 @@ Beispiel:
 
 \subsubsection{Potenzmengenkonstruktion}
 \frame{
-\frametitle{Potenzmengenkonstruktion}
+\frametitle{\textcolor{KITblue}{Potenzmengenkonstruktion}}
 Jeder nichtdeterministische endliche Automat hat einen äquivalenten deterministischen endlichen Automat.
  \begin{figure}[H]
  \begin{center}
@@ -280,7 +290,7 @@ In eine Tabelle werden die Automatenzustände und ihre Folgezustände bei jeweil
 \end{center}
 }
 \frame{
-\frametitle{Potenzmengenkonstruktion}
+\frametitle{\textcolor{KITblue}{Potenzmengenkonstruktion}}
 Ein \textcolor{red}{neuer Zustand} entsteht, wenn man von einem alten Zustand durch eine Eingabe in mehrere Zustände kommt.
 \vspace{-0.3cm}
 \begin{center}
@@ -318,7 +328,7 @@ Ein \textcolor{red}{neuer Zustand} entsteht, wenn man von einem alten Zustand du
 
 }
 \frame{
-\frametitle{Potenzmengenkonstruktion}
+\frametitle{\textcolor{KITblue}{Potenzmengenkonstruktion}}
 Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen, die einen Endzustand enthalten, sind wiederum im neuen Automaten Endzustände
 \begin{figure}[H]
 \begin{center}
@@ -345,7 +355,7 @@ Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen, die einen
 }
 \subsection{Konstruktion eines DEA aus einem NEA}
 \begin{frame}
-  \frametitle{NEA2DEA: Aufgaben}
+  \frametitle{\textcolor{KITblue}{NEA2DEA: Aufgaben}}
   Über dem Alphabet $\Sigma = \{a,b\}$ sei der reguläre
   Ausdruck
   $r := {(a \cup (ab (b)^* ba))^*}$
@@ -363,7 +373,7 @@ Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen, die einen
 
 
 \begin{frame}
-	\frametitle{Eliminierung von $\varepsilon$-Übergängen}
+	\frametitle{\textcolor{KITblue}{Eliminierung von $\varepsilon$-Übergängen}}
 	\begin{block}{Satz 2.13 (Skript)}
 	\begin{itemize}
 	 \item Zu jedem nichtdeterministischen endlichen Automaten mit \(\varepsilon\)-Übergängen gibt es einen äquivalenten nichtdeterministischen
@@ -376,7 +386,7 @@ Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen, die einen
 	\end{block}
 \end{frame}
 \begin{frame}
-\frametitle{Eliminierung von $\varepsilon$-Übergängen}
+\frametitle{\textcolor{KITblue}{Eliminierung von $\varepsilon$-Übergängen}}
 	\begin{block}{Konstruktion}
 	Zu einem NEA \(A := (Q, \Sigma, \delta, s, F)\) mit \(\varepsilon\)-Übergängen konstruieren wir einen 
 	  äquivalenten NEA \(\tilde{A} := (\tilde{Q}, \Sigma, \tilde{\delta}, \tilde{s}, \tilde{F})\) mit
@@ -397,7 +407,7 @@ Die Einträge der ersten Spalte sind die neuen Zustände. Alle Mengen, die einen
 
 \end{frame}
 \begin{frame}
-	\frametitle{NEA2DEA: Aufgaben}
+	\frametitle{\textcolor{KITblue}{NEA2DEA: Aufgaben}}
 Gegeben sei der NEA ${\cal A}=(\{s,q,f\},\{a,b,c\},\delta,s,\{f\})$, wobei
 die Übergangsfunktion $\delta$ gegeben ist durch:
 \begin{center}
@@ -416,7 +426,7 @@ DEA. Geben Sie hierbei die Übergangsfunktion tabellarisch an.
 \end{enumerate}
 \end{frame}
 \begin{frame}	
-\frametitle{Aufgaben zu \(\varepsilon\)-Übergängen}
+\frametitle{\textcolor{KITblue}{Aufgaben zu \(\varepsilon\)-Übergängen}}
 Sei $A=(Q,\Sigma, \delta, s, \{q_f\})$ ein NEA, derart dass es keine zu $s$ hinführenden und keine von $q_f$ ausgehenden Übergänge gibt. Beschreiben Sie für jede der folgenden Modifikationen von A die akzeptierte Sprache als Modifikation von $L=L(A)$:
 \begin{enumerate}
 \item Der Automat, der aus A konstruiert wird, indem $\varepsilon$-Übergänge von $s$ zu jedem Zustand hinzugefügt werden, der von $s$ aus auf einem Pfad erreichbar ist, dessen Beschriftungen sowohl Symbole aus $\Sigma$ als auch $\varepsilon$ enthalten können.
@@ -428,7 +438,7 @@ Sei $A=(Q,\Sigma, \delta, s, \{q_f\})$ ein NEA, derart dass es keine zu $s$ hinf
 
 \subsection{Konstruktion eines regulären Ausdrucks}
 \begin{frame}
-\frametitle{Konstruktion eines RA aus einem DEA}
+\frametitle{\textcolor{KITblue}{Konstruktion eines RA aus einem DEA}}
 Wir wissen: Jeder DEA hat einen regulären Ausdruck, der genau die Sprache beschreibt, die der Automat akzeptiert. Wie konstruiert man nun diesen RA aus dem DEA?\\[0.6cm]
 \textbf{Idee:} Betrachte die Sprachen $L_{q_r,i,q_t}$, definiert als \( w \in \Sigma^*\) mit $w$ überführt $q_r$ in $q_t$ unter Benutzung der Zwischenzustände $\{q_1,\ldots,q_i\}$
 \begin{itemize}
@@ -439,7 +449,7 @@ Wir wissen: Jeder DEA hat einen regulären Ausdruck, der genau die Sprache besch
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{Beispiele zum Verständnis}
+\frametitle{\textcolor{KITblue}{Beispiele zum Verständnis}}
 \vspace{-1cm}
 \begin{figure}[H]
 \begin{center}
@@ -464,7 +474,7 @@ Was sind hier jeweils:
 \end{frame}
 
 \begin{frame}
-\frametitle{Ausführliche Konstruktion}
+\frametitle{\textcolor{KITblue}{Ausführliche Konstruktion}}
 \vspace{-1cm}
 \begin{figure}[H]
 \begin{center}
@@ -487,7 +497,7 @@ Was sind hier jeweils:
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Bestimmen Sie  mit dem im Beweis von Satz 2.14 verwendeten Verfahren die 
 reguläre Sprache, die folgender deterministische endliche Automat erkennt:
 \begin{figure}[H]
@@ -510,7 +520,7 @@ reguläre Sprache, die folgender deterministische endliche Automat erkennt:
 
 %Pumpin' Lemma
 \begin{frame}
-\frametitle{Pumping Lemma}
+\frametitle{\textcolor{KITblue}{Pumping Lemma}}
 \begin{exampleblock}{Pumping Lemma}
 Sei $L$ eine reguläre Sprache, dann existiert eine Zahl $n \in \mathbb{N}$, so dass für jedes Wort $w \in L$ mit $\left|w \right| > n$ eine Darstellung $$w = uvx$$ existiert, sodass folgende Eigenschaften erfüllt sind:
 
@@ -522,7 +532,7 @@ So folgt: Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \end{exampleblock}
 \end{frame}
 \begin{frame}
-\frametitle{Pumping Lemma: Übersicht}
+\frametitle{\textcolor{KITblue}{Pumping Lemma: Übersicht}}
 \begin{itemize}
 \item Für jede reguläre Sprache gilt das Pumping-Lemma, nicht jede Sprache für die das Pumping-Lemma gilt ist regulär!
 \item In der Übung wird üblicherweise die Kontraposition des Pumping-Lemmas verwendet. Man zeigt für eine Sprache, dass das Pumping-Lemma \emph{nicht} erfüllt ist, und daraus folgt, dass diese Sprache \emph{nicht} regulär sein kann.
@@ -534,7 +544,7 @@ So folgt: Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \end{frame}
 
 \begin{frame}
-\frametitle{Beispiel}
+\frametitle{\textcolor{KITblue}{Beispiel}}
 Sei $\Sigma = \{a, b\}$ und $L = \{a^nb^n\,|\,n\geq0\}$. (Also $L = \{\varepsilon,ab, aabb, aaabbb, \ldots\}$)
 \begin{enumerate}
 \item Für ein $n$ wähle das Wort $w = a^nb^n$.
@@ -546,7 +556,7 @@ Sei $\Sigma = \{a, b\}$ und $L = \{a^nb^n\,|\,n\geq0\}$. (Also $L = \{\varepsilo
 \end{frame}
 
 \begin{frame}
-\frametitle{Pumping Lemma: Aufgaben}
+\frametitle{\textcolor{KITblue}{Pumping Lemma: Aufgaben}}
 Welche der folgenden Sprachen sind regulär? Begründen Sie Ihre Antwort.
 
 \begin{enumerate}
@@ -562,7 +572,7 @@ $\overline{011}=100$ und $011100$ ein Beispiel für ein Wort dieser Sprache
 \subsection{Minimierung und Äquivalenzklassenautomat}
 %Der Automat hier ist vom vorherigen Beispiel kopiert, aber er sollte den Zweck erfüllen.
 \begin{frame}
- \frametitle{Minimierung von DEAs}
+ \frametitle{\textcolor{KITblue}{Minimierung von DEAs}}
  \begin{block}{Beispielautomat \(A = (Q, \Sigma, \delta, s, F)\)}
  \begin{figure}[H]
 \begin{center}
@@ -583,7 +593,7 @@ $\overline{011}=100$ und $011100$ ein Beispiel für ein Wort dieser Sprache
 Kann $A$ auf einen Automaten $A' = (Q', \Sigma, \delta', s', F')$ mit $L(A) = L(A')$ und $|Q'| \le |Q|$ überführt werden?
 \end{frame}
 \begin{frame}
-\frametitle{Minimierung von DEAs}
+\frametitle{\textcolor{KITblue}{Minimierung von DEAs}}
 $q_4$ ist nicht vom Startzustand aus erreichbar
 \begin{block}{Entferne \(q_4\)}
  \begin{figure}[h]
@@ -623,7 +633,7 @@ Nein!
 \end{block}
 \end{frame}
 \begin{frame}
- \frametitle{Methodischer Ansatz}
+ \frametitle{\textcolor{KITblue}{Methodischer Ansatz}}
  \begin{block}{Definition}
   Zustände eines (deterministischen) endlichen Automaten, die vom Anfangszustand aus nicht erreichbar sind, heißen überflüssig.
  \end{block}
@@ -636,7 +646,7 @@ Nein!
 \end{block}
 \end{frame}
 \begin{frame}
- \frametitle{Äquivalenz}
+ \frametitle{\textcolor{KITblue}{Äquivalenz}}
  \vspace{-1cm}
  \begin{block}{Aus der Vorlesung}
   \begin{itemize}
@@ -654,7 +664,7 @@ Nein!
  \end{block}
 \end{frame}
 \begin{frame}
- \frametitle{Beispiel}
+ \frametitle{\textcolor{KITblue}{Beispiel}}
  \begin{block}{Zurück zu $Q'$}
  \begin{figure}[h]
 \begin{center}
@@ -673,7 +683,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
 \end{block}
 \end{frame}
 \begin{frame}
- \frametitle{Äquivalenzklassenautomat}
+ \frametitle{\textcolor{KITblue}{Äquivalenzklassenautomat}}
  \begin{block}{Definition aus der Vorlesung (Äquivalenzklassenautomat)}
   Zu einem DEA \(A = (Q, \Sigma, \delta, s, F)\) definieren wir den Äquivalenzklassenautomaten 
   \(A^\equiv = (Q^\equiv, \Sigma^\equiv, \delta^\equiv, s^\equiv, F^\equiv)\) durch:
@@ -687,7 +697,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
  \end{block}
 \end{frame}
 \begin{frame}
- \frametitle{Konstruktion der Äquivalenzklassen}
+ \frametitle{\textcolor{KITblue}{Konstruktion der Äquivalenzklassen}}
  \begin{block}{}
   \begin{enumerate}
    \item Fasse alle Zustände $q_i \in Q$ in eine Klasse zusammen.
@@ -702,7 +712,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
  \end{block}
 \end{frame}
 \begin{frame}
- \frametitle{Beispiel $Q'$}
+ \frametitle{\textcolor{KITblue}{Beispiel $Q'$}}
  \vspace{-1cm}
  \begin{figure}[h]
 \begin{center}
@@ -731,7 +741,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
 \end{frame}
 
 \frame{
-  \frametitle{Automaten-Minimierung: Beispiel, Methode 1}
+  \frametitle{\textcolor{KITblue}{Automaten-Minimierung: Beispiel, Methode 1}}
 %   \begin{center}
 %   (Benötigt wird ein vollständiger DEA.)
 %   \end{center}
@@ -773,7 +783,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
 }
 
 \frame{
-  \frametitle{Minimierung, Ausführlicheres Beispiel/Aufgabe}
+  \frametitle{\textcolor{KITblue}{Minimierung, Ausführlicheres Beispiel/Aufgabe}}
   \begin{figure}[H]
   \begin{center}
   \begin{tikzpicture}
@@ -787,7 +797,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
 }
 
 \frame{
-  \frametitle{Minimierung, Ausführlicheres Beispiel}
+  \frametitle{\textcolor{KITblue}{Minimierung, Ausführlicheres Beispiel}}
   \begin{figure}[H]
   \begin{center}
   \begin{tikzpicture}
@@ -810,7 +820,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
   \end{figure}
 }
 \frame{
-  \frametitle{Minimierung, Ausführlicheres Beispiel}
+  \frametitle{\textcolor{KITblue}{Minimierung, Ausführlicheres Beispiel}}
   \begin{figure}[H]
   \begin{center}
   \begin{tikzpicture}
@@ -847,7 +857,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
 
 \subsection{Nerode-Relation}
 \begin{frame}
- \frametitle{Nerode-Relation}
+ \frametitle{\textcolor{KITblue}{Nerode-Relation}}
  \begin{block}{Definition 2.25}
  Für eine Sprache \(L \subseteq \Sigma^*\) ist die \emph{Nerode-Relation} \(R_L\) definiert durch:
   
@@ -858,7 +868,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
   \end{block}
 \end{frame}
 \begin{frame}
-\frametitle{Aufgabe zur Nerode-Relation}
+\frametitle{\textcolor{KITblue}{Aufgabe zur Nerode-Relation}}
 Bestimmen Sie die Äquivalenzklassen der Nerode-Relation zur Sprache $L=\{a^ib^jc^k \mid i,j,k \in \mathbb{N}_{>0} \}$ über dem Alphabet $\Sigma=\{a,b,c\}$.
 \end{frame}
 \begin{frame}
@@ -917,7 +927,7 @@ Der Speicher der Registermaschine ist unendlich und eindeutig adressierbar.
 
 \subsection{Turingmaschine}
 \begin{frame}
-\frametitle{Turingmaschine}
+\frametitle{\textcolor{KITblue}{Turingmaschine}}
 Eine Registermaschine ist zwar physikalischen Rechnern ähnlich, aber unhandlich um damit Beweise zu führen.
 Daher ist ein abstrakteres Modell hilfreich \\
 $\rightarrow$ Turingmaschine.
@@ -947,7 +957,7 @@ Eine Turingmaschine wird definiert als:
 \end{frame}
 
 \frame{
-	\frametitle{Graph einer Turingmaschine}
+	\frametitle{\textcolor{KITblue}{Graph einer Turingmaschine}}
 	\begin{center}
 	\begin{tikzpicture}[node distance=2.25cm,auto]
 	\node(q0)[draw,circle,thick]{$q_0$};
@@ -971,7 +981,7 @@ Eine Turingmaschine wird definiert als:
 
 
 \begin{frame}
-\frametitle{Turingmaschine}
+\frametitle{\textcolor{KITblue}{Turingmaschine}}
  \label{sec:busy_beaver}
 
 Konstruieren Sie eine Turingmaschine, die aus drei Zuständen (plus einem
@@ -995,7 +1005,7 @@ getrennte Binärworte aus $\{0,1\}^*$ addiert.
 
 \subsection{Entscheidbarkeit}
 \begin{frame}
- \frametitle{Definitionen zur TM (Vorlesung)}
+ \frametitle{\textcolor{KITblue}{Definitionen zur TM (Vorlesung)}}
  \begin{enumerate}
   \item Eine TM \emph{akzeptiert} eine Eingabe $w \in \Sigma^*$, wenn sie nach Lesen von $w$ in einem Zustand aus $F$ stoppt.
   \item Sie \emph{akzeptiert} eine Sprache $L \subseteq \Sigma^*$ genau dann, wenn sie ausschließlich Wörter $w$ aus $L$ als Eingabe akzeptiert.
@@ -1008,7 +1018,7 @@ getrennte Binärworte aus $\{0,1\}^*$ addiert.
 \end{frame}
 
 \begin{frame}
- \frametitle{Beispiel zur Akzeptanz}
+ \frametitle{\textcolor{KITblue}{Beispiel zur Akzeptanz}}
  \begin{itemize}
   \item $\Sigma := \{a, b\}$  
   \item $F := \{q_4\}$
@@ -1035,7 +1045,7 @@ getrennte Binärworte aus $\{0,1\}^*$ addiert.
  \end{frame}
 
 \begin{frame}
- \frametitle{Sprache}
+ \frametitle{\textcolor{KITblue}{Sprache}}
  \begin{itemize}
   \item $aab$ wird von der TM akzeptiert.
   \item $abb$ nicht.
@@ -1051,7 +1061,7 @@ getrennte Binärworte aus $\{0,1\}^*$ addiert.
 
 \subsection{Universelle Turingmaschine}
 \begin{frame}
-\frametitle{Universelle Turingmaschine}
+\frametitle{\textcolor{KITblue}{Universelle Turingmaschine}}
 \begin{block}{Gödelnummer}
 Jede Turingmaschine lässt sich eindeutig als Zahl kodieren. Eine solche Kodierung einer Turingmaschine nennen wir eine Gödelnummer dieser Turingmaschine. Wir vereinbaren weiterhin, dass alle gemäß unserer Kodierung ungültigen Gödelnummern einer TM zugeordnet werden, die alle Eingaben ablehnt.
 \end{block}
@@ -1061,7 +1071,7 @@ Es existieren Turingmaschinen, die jede andere Turingmaschine bei Angabe der Ent
 \end{frame}
 
 \begin{frame}
- \frametitle{Nicht entscheidbare Sprache}
+ \frametitle{\textcolor{KITblue}{Nicht entscheidbare Sprache}}
  \begin{block}{Beispiel}
  \begin{itemize}
   \item Die Sprache aller ``Busy-Beaver''-Turingmaschinen mit 15 Zuständen ist nicht entscheidbar.
@@ -1071,7 +1081,7 @@ Es existieren Turingmaschinen, die jede andere Turingmaschine bei Angabe der Ent
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgaben zur Entscheidbarkeit}
+\frametitle{\textcolor{KITblue}{Aufgaben zur Entscheidbarkeit}}
  Seien $L_1$ und $L_2$ zwei Sprachen über einem Alphabet $\Sigma$.
 Beweisen Sie:
 \begin{enumerate}
@@ -1085,7 +1095,7 @@ entscheidbar.
 \end{frame}
 
 \begin{frame}
- \frametitle{Aufgabe zur Semi-Entscheidbarkeit}
+ \frametitle{\textcolor{KITblue}{Aufgabe zur Semi-Entscheidbarkeit}}
 Sei $L$ eine semi-entscheidbare Sprache, die nicht entscheidbar ist. Ist die
 Sprache $L'=\{0w:w \in L\} \cup \{1w: w \not\in L\}$ entscheidbar,
 semi-entscheidbar oder keins von beiden?
@@ -1096,20 +1106,20 @@ dann $L$ entscheidbar ist.
 
 
 \begin{frame}
- \frametitle{Halteproblem}
+ \frametitle{\textcolor{KITblue}{Halteproblem}}
  Zeigen Sie, dass das Halteproblem semi-entscheidbar ist.
 \end{frame}
 
 \subsection{Erweiterungen von Turingmaschinen}
 \begin{frame}
-\frametitle{Erweiterungen von Turingmaschinen}
+\frametitle{\textcolor{KITblue}{Erweiterungen von Turingmaschinen}}
 \begin{block}{Erweiterungen}
 Es gibt mehrere, zu Turingmaschinen (bzgl. Berechenbarkeit) äquivalente Berechnungsmodelle, die der Turingmaschine sehr ähnlich sind. Man spricht hier von Erweiterungen von Turingmaschinen. Diese verwendet man gerne in z.B. Beweisen, da sie oft Übersichtlicher sind.
 \end{block}
 \end{frame}
 % Mehrkopf
 \begin{frame}
-\frametitle{Mehrkopf-Turingmaschinen}
+\frametitle{\textcolor{KITblue}{Mehrkopf-Turingmaschinen}}
 \vspace{-2cm}
 \begin{figure}[H]
 \begin{center}
@@ -1139,7 +1149,7 @@ $$ \delta: Q \times \Gamma^n \rightarrow Q \times \Gamma^n \times \{L,N,R\}^n$$
 
 % Mehrband
 \begin{frame}
-\frametitle{Mehrband-Turingmaschinen}
+\frametitle{\textcolor{KITblue}{Mehrband-Turingmaschinen}}
 \vspace{-2cm}
 \begin{figure}[H]
 \begin{center}
@@ -1188,7 +1198,7 @@ $$ \delta: Q \times \Gamma \times \{1, \ldots, n\} \rightarrow Q \times \Gamma \
 \end{frame}
 % Mehrdim
 \begin{frame}
-\frametitle{Mehrkopf Turingmaschinen}
+\frametitle{\textcolor{KITblue}{Mehrkopf Turingmaschinen}}
 \vspace{-2cm}
 \begin{figure}[H]
 \begin{center}
@@ -1199,7 +1209,7 @@ $$ \delta: Q \times \Gamma \times \{1, \ldots, n\} \rightarrow Q \times \Gamma \
 \end{tikzpicture}
 \end{center}
 \end{figure}
-Eine Mehrdimensionale Turingmaschine hat ein Mehrdimensionales Band, der Kopf kann sich dann in allen verfügbaren Dimensionen bewegen.
+Eine mehrdimensionale Turingmaschine hat ein mehrdimensionales Band, der Kopf kann sich dann in allen verfügbaren Dimensionen bewegen.
 \begin{block}{Änderungen in der Definition (für Dimension 2)}
 $$ \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,N,R,U,D\}$$
 \end{block}
@@ -1208,7 +1218,7 @@ $$ \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,N,R,U,D\}$$
 % Beispiel (if time)
 % Aufgabe
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 \vspace{-1cm}
 Eine $k$-Band-Turingmaschine ist eine Turingmaschine mit $k$
 Arbeitsbändern und der Übergangsfunktion
@@ -1237,7 +1247,7 @@ Turingmaschine mit Zeitaufwand $O(T^2(n))$ simuliert werden kann.\\
 
 \subsection{Satz von Rice}
 \begin{frame}
-\frametitle{Satz von Rice}
+\frametitle{\textcolor{KITblue}{Satz von Rice}}
 Der Satz von Rice sagt aus, dass es unmöglich ist, eine nichttriviale Eigenschaft von Turingmaschinen algorithmisch zu entscheiden.
 \begin{block}{Formale Version}
 Es sei R die Klasse aller Turing-berechenbaren Funktionen und $S$ eine beliebige nichttriviale (das bedeutet $S \neq \emptyset$ und $S \neq R$) Teilmenge davon. Dann ist die Sprache
@@ -1247,13 +1257,13 @@ Unentscheidbar.
 \end{frame}
 % Beispiel
 \begin{frame}
-\frametitle{Beispiel}
+\frametitle{\textcolor{KITblue}{Beispiel}}
 Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nicht möchte (das ist eine Teilmenge der Turingberechenbaren Funktionen) ist unentscheidbar. Daraus folgt, dass es keinen perfekten Virenscanner geben kann!
 \end{frame}
 
 % Aufgabe
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Kann man die Entscheidbarkeit der folgenden Mengen mithilfe des Satzes von Rice bestimmen?
 \begin{itemize}
 \item Alle Turingmaschinen die nur $0$ aufs Band Schreiben.
@@ -1264,7 +1274,7 @@ Kann man die Entscheidbarkeit der folgenden Mengen mithilfe des Satzes von Rice 
 
 \subsection{Postsches Korrespondenzproblem}
 \begin{frame}
-\frametitle{Postsches Korrespondenzproblem}
+\frametitle{\textcolor{KITblue}{Postsches Korrespondenzproblem}}
 Gegeben sei einer Folge von Paaren $((x_1, y_1), (x_2, y_2), \ldots, (x_n,y_n))$ von nichtleeren Worten über einem endlichen Alphabet. Dies nennt man eine \textbf{Instanz} des PKP.
 Eine nicht-leere Folge $I = i_1, i_2, \ldots, i_m$ von indices $\{1, \ldots, n\}$ heißt Lösung zu $P$, wenn $x_{i_1}x_{i_2}\ldots{}x_{i_m} = y_{i_1}y_{i_2}\ldots{}y_{i_m}$.
 \begin{block}{Beispiel}
@@ -1281,7 +1291,7 @@ Lösung: $1,3,2,3$
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 \begin{enumerate}
 \item Finde eine Lösung für folgende Instanz des Post'schen Korrespondenzproblems: 
 \[ ((aa, a), (b, aa), (a, aab)) \]
@@ -1296,7 +1306,7 @@ Lösung: $1,3,2,3$
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Finde eine Lösung für folgendes PCP
 $$ ((001,0),(01,011),(01,101),(10,001)) $$
 \pause
@@ -1310,7 +1320,7 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 
 \section{Probleme}
 \begin{frame}
- \frametitle{Probleme}
+ \frametitle{\textcolor{KITblue}{Probleme}}
  \begin{block}{Definition (Skript)}
  Ein \emph{Problem $\Pi$} ist gegeben durch:
  \begin{enumerate}
@@ -1322,7 +1332,7 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 \end{frame}
 
 \begin{frame}
- \frametitle{Entscheidungsproblem}
+ \frametitle{\textcolor{KITblue}{Entscheidungsproblem}}
  \begin{block}{Definition}
   Ein Entscheidungsproblem ist ein Problem, bei dem die Lösung aus ``Ja'' oder ``Nein'' besteht. 
   Entscheidungsprobleme lassen sich gut auf Sprachen abbilden.
@@ -1330,7 +1340,7 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 \end{frame}
 
 \begin{frame}
- \frametitle{Optimierungsproblem und Entscheidungsproblem}
+ \frametitle{\textcolor{KITblue}{Optimierungsproblem und Entscheidungsproblem}}
  \begin{block}{Beispiel}
   \begin{enumerate}
    \item Die Aufgabe, aus einem gegebenen Blech möglichst viele sternförmige Weihnachtsplätzchen zu gewinnen, ist ein Optimierungsproblem.
@@ -1361,7 +1371,7 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 %TODO: Grafik
 
 \begin{frame}
- \frametitle{Entscheidungsproblem}
+ \frametitle{\textcolor{KITblue}{Entscheidungsproblem}}
  \begin{block}{TUT}
   Gegeben seien eine Tutoriumsliste mit m Tutorien und Tutoriumswahlen von n Studenten. Jedes Tutorium kann nur l Teilnehmer haben.
  Das Entscheidungsproblem \textit{TUT} besteht darin, zu entscheiden, ob alle Studenten ihr Wunschtutorium bekommen können.
@@ -1383,7 +1393,7 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 \end{frame}
 
 \begin{frame}
- \frametitle{Optimierungsproblem}
+ \frametitle{\textcolor{KITblue}{Optimierungsproblem}}
  Gegeben sei ein Graph $G=(V,E)$ mit $V:=\{1,\ldots,n\}$ und $E\subseteq \{\{u,v\} \mid u,v \in V, u\neq v\}$. Weiter seien $c:E \rightarrow \mathbb{R}^+$ eine Längenfunktion auf den Kanten des Graphen sowie $s\in V$ ein ausgewiesener Start- und $t\in V$ ein ausgewiesener Zielknoten. 
 Ein Pfad von $s$ nach $t$ ist eine Folge von Kanten $p = \{i_1,i_2\},\{i_2,i_3\},\ldots,\{i_{k-2},i_{k-1}\},\{i_{k-1},i_k\}$ mit $\{i_j, i_{j+1}\} \in E$ und $i_1=s$ sowie $i_k=t$. 
 Die Länge des Pfades sei definiert als die Summe der Längen aller Kanten auf dem Pfad. 
@@ -1393,7 +1403,7 @@ Formulieren Sie ein zu Ihrem Optimierungsproblem gehörendes Entscheidungsproble
 
 \subsection{Kodierungsschemata}
 \begin{frame}
- \frametitle{Kodierungsschemata (VL)}
+ \frametitle{\textcolor{KITblue}{Kodierungsschemata (VL)}}
  \begin{block}{Definition Kodierungsschema}
  Ein \emph{Kodierungsschema} s ordnet jedem Problembeispiel eines Problems eine Zeichenkette oder Kodierung über einem Alphabet $\Sigma$ zu. 
  Die Inputlänge eines Problembeispiels ist die Anzahl der Symbole seiner Kodierung.
@@ -1409,7 +1419,7 @@ für alle Problembeispiele I von $\Pi$.
 \end{frame}
 
 \begin{frame}
- \frametitle{Kodierungsschemata}
+ \frametitle{\textcolor{KITblue}{Kodierungsschemata}}
  Das Entscheidungsproblem \textit{PRIMES} besteht darin, zu entscheiden, ob es sich bei einer gegebenen natürlichen Zahl $p>1$ um eine Primzahl handelt. 
 Eine Probleminstanz von \textit{PRIMES} wird also durch eine natürliche Zahl kodiert. 
 Für $b\in \mathbb{N}$ bezeichne $s_b$ das Kodierungsschema, welches Zahlen zur Basis $b$ darstellt.
@@ -1422,7 +1432,7 @@ Zeigen Sie, dass die Kodierungsschemata $s_a$ und $s_b$ für $a,b>1$ bezüglich 
 \end{frame}
 
 \begin{frame}
-\frametitle{Kodierung von TUT}
+\frametitle{\textcolor{KITblue}{Kodierung von TUT}}
  \begin{block}{Wiederholung: TUT}
   Gegeben seien eine Tutoriumsliste mit m Tutorien und Tutoriumswahlen von n Studenten. Jedes Tutorium kann nur l Teilnehmer haben.
  Das Entscheidungsproblem \textit{TUT} besteht darin, zu entscheiden, ob alle Studenten ihr Wunschtutorium bekommen können.
@@ -1437,7 +1447,7 @@ Zeigen Sie, dass die Kodierungsschemata $s_a$ und $s_b$ für $a,b>1$ bezüglich 
 \end{frame}
 
 \begin{frame}
-\frametitle{Kodierung von TUT}
+\frametitle{\textcolor{KITblue}{Kodierung von TUT}}
 \begin{block}{Beispiel}
  Gegeben sei eine Instanz \textit{I} von TUT mit 2 Tutorien, 5 Studenten, einer maximalen Teilnehmerzahl von 3 und folgenden Wahlen:
  \begin{enumerate}
@@ -1455,7 +1465,7 @@ $10\#101\#11 \#001\#010 \#010\#010 \#011\#001 \#100\#010 \#101\#010$
 \end{frame}
 
 \begin{frame}
-\frametitle{TUT}
+\frametitle{\textcolor{KITblue}{TUT}}
 \begin{block}{Beispiel}
  Gegeben sei eine Instanz \textit{I} von TUT mit 2 Tutorien, 5 Studenten, einer maximalen Teilnehmerzahl von 3 und folgenden Wahlen:
  \begin{enumerate}
@@ -1473,19 +1483,19 @@ $10\#101\#11 \#001\#010 \#010\#010 \#011\#001 \#100\#010 \#101\#010$
 
 \subsection{Die Klasse P}
 \begin{frame}
-\frametitle{Die Klasse $\mathcal{P}$}
+\frametitle{\textcolor{KITblue}{Die Klasse $\mathcal{P}$}}
 Die Klasse $\mathcal{P}$ ist definiert als die Menge aller Sprachen, die von einer (deterministischen) Turingmaschine, deren Zeitkomplexität höchstens polynomial ist, entschieden werden können.\\[6pt]
 \end{frame}
 
 \begin{frame}
-\frametitle{Beispiel}
+\frametitle{\textcolor{KITblue}{Beispiel}}
 \textbf{Anmerkung:} Da eine RAM Maschine in Polyzeit von einer TM simuliert werden kann, kann man (auf einer abstrakteren Ebene) i.A. Komplexitäten von bekannten Algorithmen in Beweisen verwenden.\\[10pt]
 Die folgende Sprache ist in $\mathcal{P}$: Die gerichteten Graphen zusammen mit einem Start- und einem Endknoten, so dass der Endknoten vom Startknoten aus über die Kanten erreichbar ist.\\[6pt]
 \textbf{Grober Beweis:}	Tiefensuche ist in $\mathcal{O}(|\mathcal{V}| + |\mathcal{E}|)$
 \end{frame}
 
 \begin{frame}
-\frametitle{Sind folgende Sprachen in $\mathcal{P}$?}
+\frametitle{\textcolor{KITblue}{Sind folgende Sprachen in $\mathcal{P}$?}}
 \begin{itemize}
 \item Die Wörter der deutschen Sprache
 \item Die ungraden Zahlen
@@ -1497,7 +1507,7 @@ Die folgende Sprache ist in $\mathcal{P}$: Die gerichteten Graphen zusammen mit 
 \end{frame}
 
 \begin{frame}
- \frametitle{Laufzeitbetrachtung}
+ \frametitle{\textcolor{KITblue}{Laufzeitbetrachtung}}
  Betrachten Sie $L_1 := L[\text{\textit{PRIMES}},s_1]$. 
 Ein naiver Algorithmus für \textit{PRIMES} könnte alle Zahlen $2,3,\ldots,p-1$ darauf hin überprüfen, ob sie die gegebene Zahl $p$ teilen. 
 Beschreiben Sie kurz in Worten die Arbeitsweise einer \textbf{deterministischen} Turing-Maschine, die diesen Algorithmus implementiert und damit $L_1$ entscheidet. 
@@ -1506,7 +1516,7 @@ Geben Sie die Laufzeit Ihrer Turing-Maschine asymptotisch an. Ist $L_1$ in $\mat
 
 \subsection{Nichtdeterministische Turingmaschinen}
 \begin{frame}
-\frametitle{Nichtdeterministische Turingmaschinen}
+\frametitle{\textcolor{KITblue}{Nichtdeterministische Turingmaschinen}}
 
 \begin{block}{Version aus der Vorlesung}
 Wir definieren eine nichtdeterministische Turingmaschine als Erweiterung einer deterministischen.
@@ -1517,7 +1527,7 @@ Wir definieren eine nichtdeterministische Turingmaschine als Erweiterung einer d
 \end{block}
 \end{frame}
 \begin{frame}
-\frametitle{Nichtdeterministische Turingmaschinen: Anmerkung}
+\frametitle{\textcolor{KITblue}{Nichtdeterministische Turingmaschinen: Anmerkung}}
 Es gibt weitere dazu äquivalente Definitionen von NDTMs:
  Man kann auch analog zu nichtdeterministischen endlichen Automaten, die NDTM als normale Turingmaschinen mit nicht eindeutiger Übergangsfunktion definieren,
  diese akzeptiert dann ebenfalls analog wenn ein akzeptierender Pfad existiert.\\
@@ -1526,7 +1536,7 @@ Es gibt weitere dazu äquivalente Definitionen von NDTMs:
 
 \subsection{Die Klasse NP}
 \begin{frame}
-\frametitle{$\mathcal{NP}$}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$}}
 \begin{block}{$\mathcal{NP}$}
 
 $\mathcal{NP}$ ist (analog zu $\mathcal{P}$) die Klasse aller Sprachen die von einer nichtdeterministischen Turingmaschine in Polyzeit erkannt werden.
@@ -1535,7 +1545,7 @@ $\mathcal{NP}$ ist (analog zu $\mathcal{P}$) die Klasse aller Sprachen die von e
 \end{frame}
 
 \begin{frame}
-\frametitle{Grundidee: $\mathcal{NP}$-Entscheider}
+\frametitle{\textcolor{KITblue}{Grundidee: $\mathcal{NP}$-Entscheider}}
 Üblicherweise geht eine TM die ein Problem aus $\mathcal{NP}$ entscheidet folgendermaßen vor: 
 \begin{enumerate}
 \item Rate Sogenannten "Zeugen" für $x \in L$ (Nichtdeterministisch)
@@ -1546,7 +1556,7 @@ Man spricht daher auch von den \emph{effizient verifizierbaren} Entscheidungspro
 \end{frame}
 
 \begin{frame}
-\frametitle{$\mathcal{NP}$}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$}}
  Betrachten Sie die Sprache $L_{10}^c := L[\text{\textit{PRIMES}},s_{10}]^c$ der \textit{zusammengesetzten} Zahlen in Dezimaldarstellung. 
 Beschreiben Sie grob in Worten die Arbeitsweise einer \textbf{nichtdeterministischen} Turing-Maschine, die $L_{10}^c$ entscheidet. 
 Ein Unterprogramm für die Division von Dezimalzahlen mit polynomieller Laufzeit sei gegeben und kann von Ihrer Turing-Maschine aufgerufen werden. 
@@ -1559,7 +1569,7 @@ Ist $L_{10}^c$ in $\mathcal{NP}$? Begründen Sie gegebenenfalls, warum $L_{10}^c
 
 % Unentscheidbarkeit universelle Sprache
 \begin{frame}
-\frametitle{Unentscheidbarkeit ohne Rice}
+\frametitle{\textcolor{KITblue}{Unentscheidbarkeit ohne Rice}}
 \begin{block}{Universelle Sprache (Vorlesung)}
 Die Universelle Sprache ist definiert als: $L_u := \{wv | v \in L(T_w)\}$
 \end{block}
@@ -1567,7 +1577,7 @@ Also: Die Menge aller Wörter $wv$ so dass $T_w$ das Wort $v$ akzeptiert und hä
 \end{frame}
 
 \begin{frame}
-\frametitle{Unentscheidbarkeit ohne Rice}
+\frametitle{\textcolor{KITblue}{Unentscheidbarkeit ohne Rice}}
 \begin{block}{Universelle Sprache (Vorlesung)}
 Die Universelle Sprache ist definiert als: $L_u := \{wv | v \in L(T_w)\}$
 \end{block}
@@ -1583,7 +1593,7 @@ Um zu zeigen, dass $L_u$ unentscheidbar ist, wollen wir wie folgt vorgehen: Wie 
 \end{frame}
 
 \begin{frame}
-\frametitle{Polyreduktionen}
+\frametitle{\textcolor{KITblue}{Polyreduktionen}}
 \begin{block}{Definition (Vorlesung)}
 Eine polynomielle Transformation einer Sprache $L_1$ in eine Sprache $L_2$ ist eine Funktion
 $f: \Sigma^*_1 \rightarrow \Sigma^*_2$ mit den Eigenschaften:
@@ -1601,7 +1611,7 @@ $L_2$ ist das "schwerere" Problem. Kann man $L_2$ entscheiden, so kann man mit p
 % NP vollständigkeit
 \subsection{NP-Vollständigkeit}
 \begin{frame}
-\frametitle{$\mathcal{NP}$-Schwere}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$-Schwere}}
 \begin{block}{$\mathcal{NP}$-Schwere}
 Eine Sprache $L_1$ ist $\mathcal{NP}$-schwer gdw. 
 \[\forall L_2 \in \mathcal{NP} \,\, : \,\, L_2 \propto L_1\]
@@ -1611,7 +1621,7 @@ Eine Sprache $L_1$ ist $\mathcal{NP}$-schwer gdw.
 
 % Polyreduktion ist Transitiv, daher ist NPC cool
 \begin{frame}
-\frametitle{Transitivität von Polyreduktionen und $\mathcal{NP}$}
+\frametitle{\textcolor{KITblue}{Transitivität von Polyreduktionen und $\mathcal{NP}$}}
 Polynomiale Transformationen sind transitiv, d.h. wenn $L_1 \propto L_2$ und $L_2 \propto L_3$ dann gilt auch $L_1 \propto L_3$.\\[8pt]
 Ist $L_3 \in \mathcal{NP}$, so wissen wir, dass auch $L_1$ sowie $L_2 \in \mathcal{NP}$, man sprich auch davon, $L_1$ und $L_2$ auf $L_3$ polynomiell reduziert zu haben.\\[8pt]
 Gegeben eine Sprache $L_N$, von der wir wissen das sie $\mathcal{NP}$-schwer ist, was wäre ein möglicher Ansatz um für eine weitere Sprache $L_X$ die $\mathcal{NP}$-Schwere zu beweisen?\\
@@ -1620,7 +1630,7 @@ Man zeigt $L_N \propto L_X$
 \end{frame}
 
 \begin{frame}
-\frametitle{$\mathcal{NP}$-Vollständigkeit}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$-Vollständigkeit}}
 Eine Sprache $L$ ist $\mathcal{NP}$-vollständig genau dann, wenn
 $$L \in \mathcal{NP}$$ sowie $$L\mbox{ ist $\mathcal{NP}$-schwer}$$
 Damit sind die $\mathcal{NP}$-vollständigen Probleme, die ,,schwersten'' Probleme aus $\mathcal{NP}$.\\
@@ -1629,7 +1639,7 @@ Ist etwa $SAT \in \mathcal{P}$ so wäre $\mathcal{P} = \mathcal{NP}$. (warum?)
 \end{frame}
 
 \begin{frame}
-\frametitle{CLIQUE}
+\frametitle{\textcolor{KITblue}{CLIQUE}}
 \begin{block}{Problem}
 \textbf{Gegeben:} Graph $G = (V, E)$ und ein Parameter $K \leq |V|$\\
 \textbf{Problem:} Gibt es in G eine Clique der Größe mindestens $K$?
@@ -1641,7 +1651,7 @@ Eine Clique ist ein vollständig verbundener Teilgraph, also eine Menge $V' \sub
 \end{frame}
 
 \begin{frame}
-\frametitle{CLIQUE Beispiel}
+\frametitle{\textcolor{KITblue}{CLIQUE Beispiel}}
 \vspace{-1cm}
 \begin{figure}[H]
 \begin{tikzpicture}[scale=1.8]
@@ -1685,7 +1695,7 @@ Eine Clique ist ein vollständig verbundener Teilgraph, also eine Menge $V' \sub
 \end{frame}
 
 \begin{frame}
-\frametitle{$\mathcal{NP}$-Vollständigkeitsbeweis}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$-Vollständigkeitsbeweis}}
 \begin{itemize}
  \item $CLIQUE \in \mathcal{NP}$: Übung\\
  \item $CLIQUE\mbox{ } \mathcal{NP}-schwer:$ Wir zeigen $3SAT \propto CLIQUE$. (warum?)\\\pause
@@ -1694,7 +1704,7 @@ Eine Clique ist ein vollständig verbundener Teilgraph, also eine Menge $V' \sub
 \end{frame}
 
 \begin{frame}
-\frametitle{$\mathcal{NP}$-Vollständigkeitsbeweis}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$-Vollständigkeitsbeweis}}
 Sei $C = \{c_1, \ldots, c_n\}$ eine $3SAT$-Instanz mit 
 $$ c_i = x_{i1} \vee x_{i2} \vee x_{i3} \mbox{ mit } x_{ij} \in \{u_1,\ldots,u_m,\bar{u_1},\ldots,\bar{u_m}\} $$
 Konstruiere eine CLIQUE-Instanz $(G = (V, E), K)$ folgendermaßen:
@@ -1712,19 +1722,19 @@ $$K = n$$
 und wir suchen nach einer $CLIQUE$ der Größe $n$.\\
 \end{frame}
 \begin{frame}
-\frametitle{$\mathcal{NP}$-Vollständigkeitsbeweis}
+\frametitle{\textcolor{KITblue}{$\mathcal{NP}$-Vollständigkeitsbeweis}}
 Wenn also eine $n-CLIQUE$ existiert, so heißt dies, wir haben $n$ erfüllbare Literale, die alle in jeweils unterschiedlichen Formeln stehen (Da ja alle untereinander verbunden sind). Das liefert uns eine erfüllende Wahrheitsbelegung. Eine $n$-$CLIQUE$ existiert also genau dann wenn es für die $3SAT$ Instanz eine erfüllende Wahrheitsbelegung gibt.\\
 Da $CLIQUE$ $\mathcal{NP}$-schwer ist und in $\mathcal{NP}$ liegt, ist also $CLIQUE$ $\mathcal{NP}$-Vollständig.
 \end{frame}
 
 \begin{frame}
-\frametitle{Allgemeines zu $NP$-Vollständigkeitsbeweise}
+\frametitle{\textcolor{KITblue}{Allgemeines zu $NP$-Vollständigkeitsbeweise}}
 In der Regel ist es schwer zu zeigen, dass ein Problem $\mathcal{NP}$-schwer ist, aber leicht zu zeigen, dass ein Problem in $\mathcal{NP}$ liegt.\\[8pt]
 Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung für die Reduktion benötigt (Ausnahme: Satz von Cook), lohnt es sich einige kennen zu lernen.
 \end{frame}
 
 \begin{frame}
-\frametitle{SAT}
+\frametitle{\textcolor{KITblue}{SAT}}
 \begin{block}{Problem}
 \textbf{Gegeben:}
 \begin{itemize}
@@ -1739,7 +1749,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{3-SAT}
+\frametitle{\textcolor{KITblue}{3-SAT}}
 \begin{block}{Problem}
 \textbf{Gegeben:}
 \begin{itemize}
@@ -1753,7 +1763,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{MAX2SAT}
+\frametitle{\textcolor{KITblue}{MAX2SAT}}
 \begin{block}{Problem}
 \textbf{Gegeben:}
 \begin{itemize}
@@ -1765,7 +1775,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \end{block}
 \end{frame}
 \begin{frame}
-\frametitle{COLOR}
+\frametitle{\textcolor{KITblue}{COLOR}}
 \begin{block}{Problem}
 \textbf{Gegeben:} Graph $G = (V, E)$ und ein Parameter $K \in \mathbb{N}$\\
 \textbf{Frage:} Gibt es eine Knotenfärbung von $G$ mit höchstens $K$ Farben, so dass zwei adjazente Knoten verschiedene Farben besitzen?
@@ -1775,7 +1785,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{EXACT COVER}
+\frametitle{\textcolor{KITblue}{EXACT COVER}}
 \begin{block}{Problem}
 \textbf{Gegeben:} Eine Menge $\mathcal{S}$ von Teilmengen einer Menge $X$\\
 \textbf{Frage:} Gibt es eine Teilmenge $\mathcal{S}^*$ von $\mathcal{S}$, so dass jedes Element aus $X$ in genau einem der $s \in \mathcal{S}^*$ enthalten ist?
@@ -1783,7 +1793,7 @@ Da man üblicherweise ein $\mathcal{NP}$-vollständiges Problem als Vorausetzung
 \end{frame}
 
 \begin{frame}
-\frametitle{Sudoku}
+\frametitle{\textcolor{KITblue}{Sudoku}}
 Sudoku lässt sich als EXACT-COVER Instanz formulieren!\\
 Definiere:\\
 Sei $V = \{1,2,\ldots,9\}$ die Menge der möglichen Lösungen für ein Kästchen.
@@ -1795,7 +1805,7 @@ Seien nun noch $b_k$ die Kästchen, die zum Block $k$ gehören, und $B$ die Meng
 \end{frame}
 
 \begin{frame}
-\frametitle{Sudoku}
+\frametitle{\textcolor{KITblue}{Sudoku}}
 Betrachte nun die folgende Menge: $U := R \times C \cup R \times V \cup C \times V \cup B \times V$, $U$ ist unsere Menge $X$ (aus der Formulierung des EXACT-COVER-Problems).\\
 Definiere: $S_{ijkl} := \{(r_i,c_j),(r_i,v_l),(c_j,v_l),(b_k,v_l)\} \subset U$.\\[8pt]
 Wird $S_{ijkl}$ in die Lösung aufgenommen, so kodiert dies, dass im Kästchen $s_{ij}$ im Block $b_k$ der Wert $v_l$ steht.\\
@@ -1804,7 +1814,7 @@ Um zu garantieren das in einem bestimmten Feld $s_{i'j'}$ eine bestimmte Zahl $v
 \end{frame}
 
 \begin{frame}
-\frametitle{SUBSET-SUM}
+\frametitle{\textcolor{KITblue}{SUBSET-SUM}}
 \begin{block}{Problem}
 \textbf{Gegeben:}
 \begin{itemize}
@@ -1817,21 +1827,21 @@ Gibt es eine Teilmenge $S^*$, so dass die Summe der Elemente der Teilmenge $n$ i
 \end{frame}
 %% - PARTITION
 \begin{frame}
-\frametitle{PARTITION}
+\frametitle{\textcolor{KITblue}{PARTITION}}
 \begin{block}{Problem}
 \textbf{Gegeben:} Eine Menge von natürlichen Zahlen\\
 \textbf{Frage:} Kann man diese Zahlen in zwei Gruppen aufteilen, so dass die Summe der Zahlen in den beiden Gruppen jeweils gleich ist?
 \end{block}
 \end{frame}
 \begin{frame}
-\frametitle{Und viele mehr!}
+\frametitle{\textcolor{KITblue}{Und viele mehr!}}
 Es gibt (sehr) viele Probleme von denen man weiß, dass sie $NP$-Vollständig sind, es gibt ein "Klassisches" Paper von Richard Karp in dem 21 Probleme vorgestellt wurden die großteils recht bekannt sind.\\
 Wer nicht genug bekommen kann, darf in "Introduction to the Theory of Computation" von "Michael Sipser" schauen, dort gibt es sehr viele\\[10pt]
 Es kann durchaus nützlich sein zu wissen, dass ein Problem $\mathcal{NP}$-vollständig ist, dann kann man aufhören nach einem effizienten Algorithmus zu suchen.
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 \begin{tabbing}
 \textbf{Problem:} 4-COLOR\\
 \textit{Gegeben:} \= Ein ungerichteter Graph $G = (V,E)$\\
@@ -1847,7 +1857,7 @@ Vollständigkeit des Dreifärbbarkeitsproblems 3-COLOR verwenden.
 \end{frame}
 
 \begin{frame}
-\frametitle{BIN-PACKING}
+\frametitle{\textcolor{KITblue}{BIN-PACKING}}
 \begin{block}{Problem}
 \textbf{Gegeben:}
 \begin{itemize}
@@ -1859,7 +1869,7 @@ Können die Objekte so auf die Behälter verteilt werden, dass keiner der Behäl
 \end{frame}
 
 \begin{frame}
- \frametitle{KNAPSACK}
+ \frametitle{\textcolor{KITblue}{KNAPSACK}}
  Gegeben:(M, w, c, W, C)
  \begin{itemize}
   \item endliche Menge von Objekten $M$
@@ -1874,7 +1884,7 @@ Was wären das zugehörige Optimalwertproblem und Optimierungsproblem?
 \end{frame}
 
 \begin{frame}
- \frametitle{KNAPSACK - Beispiel}
+ \frametitle{\textcolor{KITblue}{KNAPSACK - Beispiel}}
  Gegeben: Instanz $I$ von KNAPSACK mit $M = {i_1, i_2, i_3, i_4}$
   \begin{center}
 \begin{tabular}{l|l|l|l|l}
@@ -1913,7 +1923,7 @@ Ist $I$ eine JA-Instanz?
 
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Betrachten Sie das Problem INDEPENDENT SET (IS):
 
 \begin{itemize}
@@ -1931,7 +1941,7 @@ $\overline{E}= \{\{v, w\} \mid v, w \in V, \{v, w\} \notin E\}$
 
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Gegeben sei folgende Instanz $I=(M, w, c, W, C)$ von KNAPSACK:
 
 \begin{itemize}
@@ -1954,7 +1964,7 @@ Für welche $C$ ist $I$ eine Ja-Instanz?
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Jedes Jahr in der Vorweihnachtszeit steht die badische Hausfrau vor dem folgenden PLÄTZCHENDOSENPROBLEM(PDP):
 
 \hspace{1cm}\parbox{0.8\textwidth}{Das während der Adventszeit liebevoll hergestellte Weihnachtsgebäck soll bis zum Verzehr in Plätzchendosen gelagert werden.
@@ -1967,7 +1977,7 @@ Können die Plätzchen so auf die Dosen verteilt werden, dass bei allen Dosen de
 \end{enumerate}
 \end{frame}
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Ein Vertex-Cover eines Graphen $G=(V,E)$ ist eine Teilmenge $V'\subseteq V$, so
 dass jede Kante aus $E$ zu mindestens einem Knoten aus $V'$ inzident ist.
 
@@ -1981,7 +1991,7 @@ Zeige, dass \textsc{VERTEX COVER} $\cal{NP}$-vollständig ist.
 \section{8. Tutoriumsvorschlag}
 \subsection{Komplementsprachen}
 \begin{frame}
-\frametitle{Komplementsprachen}
+\frametitle{\textcolor{KITblue}{Komplementsprachen}}
 \begin{block}{Definition}
 Zu einer Sprache $L \subseteq \Sigma^*$ definieren wir $co-L$ als das Komplement der Sprache, also
 $\mbox{co-}L := \Sigma^*\backslash L$
@@ -1993,7 +2003,7 @@ Aufgabe: Beschreibe $co$-$SUBSET-SUM$
 \end{frame}
 
 \begin{frame}
-\frametitle{co- und so...}
+\frametitle{\textcolor{KITblue}{co- und so...}}
 \begin{block}{Anmerkungen}
 \begin{itemize}
 \item Ob $\mathcal{NP} = co-\mathcal{NP}$ ist eine offene Frage.
@@ -2004,7 +2014,7 @@ Aufgabe: Beschreibe $co$-$SUBSET-SUM$
 \end{frame}
 
 \begin{frame}
-\frametitle{NPI}
+\frametitle{\textcolor{KITblue}{NPI}}
 \begin{block}{Definition}
 $\mathcal{NP}$-Intermediate := $\mathcal{NP} \backslash (\mathcal{NPC} \cup \mathcal{P})$
 \end{block}
@@ -2016,7 +2026,7 @@ Aufgrund ihrer Eigenschaften sind diese Probleme in der Kryptographie alle von g
 
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Betrachten Sie das Problem NEAR TAUT: Gegeben sei ein Boolescher Ausdruck $A$. Es ist zu entscheiden, ob es höchstens eine Belegung der Variablen gibt, so dass $A$ falsch wird.
 \begin{enumerate}
  \item Formulieren Sie das komplementäre Problem co-NEAR TAUT.
@@ -2025,7 +2035,7 @@ Betrachten Sie das Problem NEAR TAUT: Gegeben sei ein Boolescher Ausdruck $A$. E
 \end{frame}
 %Pseudopolynomielle Algorithmen & Starke NP-Vollständigkeit
 \begin{frame}
-\frametitle{Pseudopolynomielle Algorithmen}
+\frametitle{\textcolor{KITblue}{Pseudopolynomielle Algorithmen}}
 \begin{block}{Definition}
 Ein Algorithmus wird pseudopolynimiell genannt, wenn seine Laufzeit ein Polynom im numerischen Wert der Eingabe (und eben nicht der Länge der Eingabe) ist.
 \end{block}
@@ -2034,7 +2044,7 @@ Existiert ein solcher Algorithmus nicht, so spricht man von einem stark $\mathca
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Das Entscheidungsproblem \textit{PRIMES} besteht darin, zu entscheiden, ob es sich bei einer gegebenen natürlichen Zahl $p>1$ um eine Primzahl handelt. 
 Eine Probleminstanz von \textit{PRIMES} wird also durch eine natürliche Zahl kodiert. 
 Ein naiver Algorithmus für \textit{PRIMES} könnte alle Zahlen $2,3,\ldots,p-1$ darauf hin überprüfen, ob sie die gegebene Zahl $p$ teilen. 
@@ -2044,7 +2054,7 @@ Zeigen Sie, dass dieser Algorithmus pseudo-polynomial ist
 
 \subsection{Orakelturingmaschinen}
 \begin{frame}
-\frametitle{Orakelturingmaschinen}
+\frametitle{\textcolor{KITblue}{Orakelturingmaschinen}}
 \begin{block}{Definition}
 Eine Orakel-Turing-Maschine zum Orakel $G: \Sigma^* \rightarrow \Sigma^*$ ist eine Turingmaschine erweitert durch ein ausgezeichnetes Orakelband, sowie zwei zusätzlichen Zustände $q_f$ und $q_a$. Diese TM verhält sich für alle Zustände außer $q_f$ und $q_a$ wie eine normale TM.\\
 Kommt die Orakel-TM in den Zustand $q_f$, so wird der Inhalt des Orakelbandes von der Anfangsposition bis zur aktuellen Position des Kopfes auf dem Orakelband ersetzt durch seinen Funktionswert bzgl. $G$ und der Kopf an den Anfang des Orakelbandes zurückgesetzt.
@@ -2052,7 +2062,7 @@ Kommt die Orakel-TM in den Zustand $q_f$, so wird der Inhalt des Orakelbandes vo
 \end{frame}
 
 \begin{frame}
-\frametitle{Beispiele}
+\frametitle{\textcolor{KITblue}{Beispiele}}
 Sei $\mathcal{P}^L$, die Klasse aller Entscheidungsprobleme die in Polynomieller Zeit von einer deterministischen Orakel-Turingmaschine mit Orakel für die charakteristische Funktion der Sprache $L$ entschieden werden können.\\
 Dann ist
 \begin{itemize}
@@ -2078,7 +2088,7 @@ Dann ist
 %Integer Programming
 \subsection{Suchprobleme}
 \begin{frame}
- \frametitle{Suchprobleme}
+ \frametitle{\textcolor{KITblue}{Suchprobleme}}
  \begin{block}{Definition}
   Ein Suchproblem $\Pi$ wird beschrieben durch
   \begin{itemize}
@@ -2096,7 +2106,7 @@ Dann ist
 \end{frame}
 
 \begin{frame}
-\frametitle{Suchprobleme als Relationen}
+\frametitle{\textcolor{KITblue}{Suchprobleme als Relationen}}
 Ein Suchprobleme kann man auch als Relation auffassen, für $\Pi$ sei
 $$ R_\Pi := \{ (x,s) | x \in D_\Pi, s\in S_\Pi(x)\}$$
 Eine Funktion $f: \Sigma^* \rightarrow \Sigma^*$ realisiert eine Relation $R$, wenn für alle $x \in \Sigma^*$ gilt:
@@ -2108,7 +2118,7 @@ Ein Algorithmus löst das durch $R_\Pi$ beschriebene Suchproblem $\Pi$, wenn er 
 \end{frame}
 
 \begin{frame}
-\frametitle{Turingreduzierbarkeit}
+\frametitle{\textcolor{KITblue}{Turingreduzierbarkeit}}
 \begin{block}{Definition}
 Seien $R, R'$ Relationen über $\Sigma^*$. Eine Turing-Reduktion $\propto_T$ von $R$ auf $R'$, ist eine Orakel-Turing-Maschine $\mathcal{M}$
 \begin{itemize}
@@ -2119,14 +2129,14 @@ Seien $R, R'$ Relationen über $\Sigma^*$. Eine Turing-Reduktion $\propto_T$ von
 \end{frame}
 
 \begin{frame}
- \frametitle{$\mathcal{NP}$-Schwere von Suchproblemen}
+ \frametitle{\textcolor{KITblue}{$\mathcal{NP}$-Schwere von Suchproblemen}}
  \begin{block}{Definition}
   Ein Suchproblem $\Pi$ heißt $\mathcal{NP}$-schwer, falls es eine $\mathcal{NP}$-vollständige Sprache $L$ gibt mit $L \propto_T \Pi$
  \end{block}
 \end{frame}
 
 \begin{frame}
- \frametitle{CLIQUE als Suchproblem}
+ \frametitle{\textcolor{KITblue}{CLIQUE als Suchproblem}}
  \begin{block}{Aufgabe}
   Formuliere CLIQUE als Suchproblem.
  \end{block}
@@ -2141,7 +2151,7 @@ Seien $R, R'$ Relationen über $\Sigma^*$. Eine Turing-Reduktion $\propto_T$ von
  
  \subsection{Aufzählungsprobleme}
 \begin{frame}
- \frametitle{Aufzählungsprobleme}
+ \frametitle{\textcolor{KITblue}{Aufzählungsprobleme}}
  \begin{block}{Definition}
   Ein \emph{Aufzählungsproblem} $\Pi$ ist gegeben durch
   \begin{itemize}
@@ -2155,7 +2165,7 @@ Seien $R, R'$ Relationen über $\Sigma^*$. Eine Turing-Reduktion $\propto_T$ von
 \end{frame}
 
  \begin{frame}
- \frametitle{CLIQUE als Aufzählungsproblem}
+ \frametitle{\textcolor{KITblue}{CLIQUE als Aufzählungsproblem}}
   \begin{block}{Aufgabe}
   Formuliere CLIQUE als Aufzählungsproblem.
 \end{block}
@@ -2171,7 +2181,7 @@ Eine Möglichkeit:
 
 \subsection{Integer Programming}
 \begin{frame}
- \frametitle{INTEGER PROGRAMMING}
+ \frametitle{\textcolor{KITblue}{INTEGER PROGRAMMING}}
  \begin{block}{Definition (aus der Vorlesung)}
  \textbf{Gegeben: }
  \begin{itemize}
@@ -2196,7 +2206,7 @@ Existieren $x_1, ..., x_n \in \mathbb{N}_0$, so dass\\
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Sei $G=(V, E)$ ein ungerichter Graph und $K \leq |V|$ eine natürliche Zahl. 
 Ein \emph{DOMINATING SET} von $G$ ist eine Teilmenge $C \subseteq V$, so dass jeder Knoten $v$ entweder selbst in $C$ ist oder zu einem Knoten $w$ in $C$ adjazent ist. 
 Gibt es ein Vertex Cover von $G$, das höchstens $k$ Knoten enthält?
@@ -2208,7 +2218,7 @@ Hinweis: Nehmen Sie dabei an, dass alle Koeffizienten $a_{ij}, b_i, c_j, B$ sowi
 \section{10. Tutoriumsvorschlag}
 \subsection{Chomsky-Hierarchie}
 \frame{
-\frametitle{Grammatiken}
+\frametitle{\textcolor{KITblue}{Grammatiken}}
 \begin{block}{Definition}
  Eine Grammatik ist ein Regelsystem, mit dem sich die Wörter einer Sprache erzeugen lassen. Sie besteht aus vier Komponenten:
  \begin{itemize}
@@ -2223,7 +2233,7 @@ Hinweis: Nehmen Sie dabei an, dass alle Koeffizienten $a_{ij}, b_i, c_j, B$ sowi
 }
 
 \frame{
-\frametitle{Beispiel}
+\frametitle{\textcolor{KITblue}{Beispiel}}
 \begin{exampleblock}{Beispiel: Sprache der Palindrome}
 \begin{align*}
 V = &\{S\}\\
@@ -2235,7 +2245,7 @@ R = &\{ S \rightarrow \varepsilon \mid 0 \mid 1,\\
 }
 
 \frame{
-\frametitle{Chomsky-Hierarchie}
+\frametitle{\textcolor{KITblue}{Chomsky-Hierarchie}}
 Wir definieren Klassen von Sprachen, die von Grammatiken mit bestimmten Einschränkungen erzeugt werden:
 \begin{itemize}
 \item CH-3 Regulär/Rechtslinear
@@ -2248,7 +2258,7 @@ Frage: Welche Sprachen liegen nicht in CH-0 ?
 }
 
 \frame{
-\frametitle{CH-0}
+\frametitle{\textcolor{KITblue}{CH-0}}
 \begin{itemize}
 \item Sprachen die von einer Beliebigen Grammatik erzeugt werden.
 \item Genau die Sprachen die DTM \& NTM akzeptieren können
@@ -2256,7 +2266,7 @@ Frage: Welche Sprachen liegen nicht in CH-0 ?
 }
 
 \frame{
-\frametitle{CH-1}
+\frametitle{\textcolor{KITblue}{CH-1}}
 Kontextsensitive / Längenbeschränkte Sprachen
 \begin{itemize}
 \item Sprachen die von Grammatiken erzeugt werden, deren Ableitungen eine kürzere linke als rechte Seite haben. D.h. Produktionen machen das Wort immer länger.
@@ -2265,7 +2275,7 @@ Kontextsensitive / Längenbeschränkte Sprachen
 }
 
 \frame{
-\frametitle{CH-2}
+\frametitle{\textcolor{KITblue}{CH-2}}
 Kontextfreie Sprachen
 \begin{itemize}
 \item Grammatiken deren Ableitungsregeln auf der Linken Seite immer genau ein Nichtterminalsymbol haben.
@@ -2274,7 +2284,7 @@ Kontextfreie Sprachen
 }
 
 \frame{
-\frametitle{CH-3}
+\frametitle{\textcolor{KITblue}{CH-3}}
 \begin{itemize}
 \item Grammatiken deren Ableitungsregeln ausschließlich die folgende Form haben:
 $$A\rightarrow v \mbox{ mit } A \in V \mbox{ und } v = \varepsilon \mbox{ oder } v = aB \mbox{ mit } a \in \sum \mbox{,} B \in V$$
@@ -2283,8 +2293,8 @@ $$A\rightarrow v \mbox{ mit } A \in V \mbox{ und } v = \varepsilon \mbox{ oder }
 }
 
 \frame{
-\frametitle{Probleme}
-Es gibt einige Interesante Probleme, mit deren Entscheidbarkeit, Komplexität bzw Abgeschlossenheit wir uns noch befassen (jeweils für die Klassen)
+\frametitle{\textcolor{KITblue}{Probleme}}
+Es gibt einige interesante Probleme, mit deren Entscheidbarkeit, Komplexität bzw Abgeschlossenheit wir uns noch befassen (jeweils für die Klassen)
 \begin{itemize}
 \item Das Wortproblem
 \item Vereinigung
@@ -2298,7 +2308,7 @@ Es gibt einige Interesante Probleme, mit deren Entscheidbarkeit, Komplexität bz
 
 \subsection{Chomsky-Normalform}
 \frame{
-\frametitle{Chomsky-Normalform}
+\frametitle{\textcolor{KITblue}{Chomsky-Normalform}}
 CYK wird verwendet zur Lösung des Wortproblems für kontextfreie Sprachen (CH-2).
 Um CYK anzuwenden, muss die gegebene Grammatik erst in Chomsky-Normalform gebracht werden. Das ist für jede CH-2 Grammatik möglich.
 \
@@ -2316,7 +2326,7 @@ Um das Leere Wort in der Sprache zu erlauben, lässt sich die Grammatik leicht m
 
 %\subsection{Umwandlung in Chomsky-Normalform}
 \frame{
-\frametitle{Umwandlung in Chomsky-Normalform}
+\frametitle{\textcolor{KITblue}{Umwandlung in Chomsky-Normalform}}
 \begin{enumerate}
 \item Für alle $\textcolor{red}{a} \in \mathcal{T}$ und für alle Produktionen auf deren rechter Seite $\textcolor{red}{a}$ vorkommt 
 (außer für $V  \rightarrow \textcolor{red}{a}$, mit $V \in\mathcal{V}$),
@@ -2357,7 +2367,7 @@ Z &\rightarrow X\\
 }
 
 \frame{
-\frametitle{Umwandlung in Chomsky-Normalform}
+\frametitle{\textcolor{KITblue}{Umwandlung in Chomsky-Normalform}}
 \begin{enumerate}
 \setcounter{enumi}{1}
 \item %Die Grammatik $\varepsilon$-frei machen, d. h. $\varepsilon$ darf nur bei $\mathcal{S} \rightarrow \varepsilon$ vorkommen.
@@ -2405,7 +2415,7 @@ C &\rightarrow c\\
 
 
 \frame{
-\frametitle{Umwandlung in Chomsky-Normalform}
+\frametitle{\textcolor{KITblue}{Umwandlung in Chomsky-Normalform}}
 \begin{enumerate}
 \setcounter{enumi}{2}
 \item
@@ -2451,7 +2461,7 @@ C &\rightarrow c\\
 }
 
 \frame{
-\frametitle{Umwandlung in Chomsky-Normalform}
+\frametitle{\textcolor{KITblue}{Umwandlung in Chomsky-Normalform}}
 \begin{enumerate}
 \setcounter{enumi}{3}
 \item
@@ -2498,7 +2508,7 @@ C &\rightarrow c\\
 }
 
 \frame{
-\frametitle{Umwandlung in Chomsky-Normalform}
+\frametitle{\textcolor{KITblue}{Umwandlung in Chomsky-Normalform}}
 \begin{enumerate}
 \setcounter{enumi}{3}
 \item
@@ -2555,12 +2565,12 @@ Bestimme eine Grammatik $G'$ für $L(G)$ in Chomsky-Normalform.
 \end{frame}
 
 \frame{
-\frametitle{CYK Überblick}
-CYK ist ein Algorithmus um das Wortproblem in CH-2 zu lösen. Um den Algorithmus anzuwenden, muss eine Grammatik in Chomsky-Normalform vorliegen.\\
+\frametitle{\textcolor{KITblue}{CYK Überblick}}
+CYK ist ein Algorithmus, um das Wortproblem in CH-2 zu lösen. Um den Algorithmus anzuwenden, muss eine Grammatik in Chomsky-Normalform vorliegen.\\
 Grundidee zur Überprüfungen von einem Wort der Länge $n$:
 \begin{itemize}
-\item Wir betrachen $V_{i,j} = $ Menge der Nichtterminale aus denen das Teilwort der Position $i$ bis $j$ abgeleitet werden kann
-\item Die Lösung ob $V_{i,j}$ ableitbar ist lässt sich entscheiden durch betrachen aller möglichen $V_{i,k}$ und $V_{k+1,j}$
+\item Wir betrachen $V_{i,j} = $ Menge der Nichtterminale, aus denen das Teilwort der Position $i$ bis $j$ abgeleitet werden kann
+\item Die Lösung ob $V_{i,j}$ ableitbar ist lässt sich entscheiden durch Betrachen aller möglichen $V_{i,k}$ und $V_{k+1,j}$
 \item $V_{i,i}$ sind trivial
 \item Bottom up lässt sich dadurch $V_{1,n}$ berechnen
 \item Ist $S \in V_{i,n}$, so lässt sich das Wort ableiten.
@@ -2568,7 +2578,7 @@ Grundidee zur Überprüfungen von einem Wort der Länge $n$:
 }
 
 \frame{
-\frametitle{CYK}
+\frametitle{\textcolor{KITblue}{CYK}}
 Gegeben sei die Grammatik \textit{G} $= \mathcal{(T,V,S,P) }$  mit den folgenden Produktionen aus $\mathcal{P}$:
 \begin{align*}
 \mathcal{S} &\rightarrow XY \mid FB \mid AB \mid  GY\mid CC \mid \lambda\\
@@ -2597,7 +2607,7 @@ Ist das Wort $abcccc$ in der Sprache $\mathcal{L}(\textit{G})$?
 % Pumping Lemma für Kontextfreie Sprachen
 \subsection{Pumping Lemma für kontextfreie Sprachen}
 \begin{frame}
-\frametitle{Pumping-Lemma für kontextfreie Sprachen}
+\frametitle{\textcolor{KITblue}{Pumping-Lemma für kontextfreie Sprachen}}
 \begin{exampleblock}{Lemma}
 Für jede kontextfreie Srache $L$ gibt es eine Konstante $n \in \mathbb{N}$,
 so dass sich jedes Wort $z \in L$ mit $|z| \geq n$ so als
@@ -2613,7 +2623,7 @@ schreiben lässt, dass
 
 \subsection{Ogdens Lemma}
 \begin{frame}
-\frametitle{Ogdens Lemma für kontextfreie Sprachen}
+\frametitle{\textcolor{KITblue}{Ogdens Lemma für kontextfreie Sprachen}}
 \begin{exampleblock}{Lemma}
 Für jede kontextfreie Sprache $L$
 gibt es eine Konstante $n \in \mathbb{N}$ so dass für jedes Wort $z \in L$ mit $|z| \geq n$ gilt:\\
@@ -2630,7 +2640,7 @@ Wenn wir in $z$ mindestens $n$ Buchstaben markieren, so lässt sich $z$ so als $
 \end{frame}
 
 \begin{frame}
-\frametitle{Beweisidee}
+\frametitle{\textcolor{KITblue}{Beweisidee}}
 \begin{itemize}
 \item Jeder Knoten im Ableitungsbaum (wie wir ihn in CYK sehen) steht für ein Nichtterminalsymbol
 \item Ab einer gewissen Höhe des Baumes (bzw. Länge des Wortes) muss ein Nichtterminal im Baum mehrmals in einer Reihe vorkommen
@@ -2641,7 +2651,7 @@ Wenn wir in $z$ mindestens $n$ Buchstaben markieren, so lässt sich $z$ so als $
 \end{frame}
 
 \begin{frame}
-\frametitle{Zu Ogden und Pumping ...}
+\frametitle{\textcolor{KITblue}{Zu Ogden und Pumping ...}}
 \begin{itemize}
 \item Anwendung genau wie ``altes'' Pumping Lemma
 \item Wird verwendet um zu zeigen das eine Sprache nicht kontextfrei ist
@@ -2650,14 +2660,14 @@ Wenn wir in $z$ mindestens $n$ Buchstaben markieren, so lässt sich $z$ so als $
 \end{frame}
 
 \begin{frame}
-\frametitle{Beispiel}
+\frametitle{\textcolor{KITblue}{Beispiel}}
 Sei $L = \{a^ib^jc^kd^l | i \neq 0 \Rightarrow j = k = l\}$. Wir zeigen mit Ogdens Lemma, dass $L$ nicht kontextfrei ist.
 Für gegebenes $n$ muss das Lemma also für jedes Wort mit $n$ markierten Buchstaben erfüllt sein. Betrachte $z = ab^nc^nd^n \in L$ und markiere $b^n$.
 Zu $vx$ muss also immer ein $b$ gehören und in $vwx$ dürfen höchsten $n$ markierte Buchstaben vorkommen. Offensichtlich dürfen in $v$ und $x$ jeweils nur eine Art von Symbol vorkommen. Da aber in $v$ oder $x$ mindestens ein $b$ vorkommen muss, und die Anzahl der $b$ und $c$ und $d$ gleich bleiben muss, ist das Lemma nicht erfüllt. Daher kann $L$ nicht kontextfrei sein.
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
 Zeigen Sie, dass folgende Sprachen nicht kontextfrei sind:
 \begin{enumerate}
  \item $L=\{a^ib^jc^id^j \mid i,j \geq 1 \}$
@@ -2666,12 +2676,12 @@ Zeigen Sie, dass folgende Sprachen nicht kontextfrei sind:
 \end{frame}
 
 \begin{frame}
-\frametitle{Lösungshinweise für Teilaufgabe a}
+\frametitle{\textcolor{KITblue}{Lösungshinweise für Teilaufgabe a}}
  Wähle $n$ wie im Pumping-Lemma und $z=a^nb^nc^nd^n$. 
  Zeige dann, dass für jede Zerlegung $z=uvwxy$ gemäß dem Pumping-Lemma $uv^0wx^0y$ nicht in $L$ ist.
 \end{frame}
 \begin{frame}
- \frametitle{Lösungshinweise für Teilaufgabe b}      
+ \frametitle{\textcolor{KITblue}{Lösungshinweise für Teilaufgabe b} }     
  Teilaufgabe b) kann theoretisch mit dem Pumping-Lemma gezeigt werden (indem man als Wort $a^nb^na^nb^n$ wählt), dazu bekommt man aber eine ziemlich hässliche Fallunterscheidung.
        Einfacher ist es, Ogden's Lemma zu benutzen: 
        \begin{itemize}
@@ -2682,7 +2692,7 @@ Zeigen Sie, dass folgende Sprachen nicht kontextfrei sind:
         \end{itemize}
 \end{frame}
 \begin{frame}
-\frametitle{Fallunterscheidung für Teilaufgabe b}
+\frametitle{\textcolor{KITblue}{Fallunterscheidung für Teilaufgabe b}}
 \begin{itemize}
         \item Fall 1: $vx$ enthält mindestens einen Buchstaben aus dem ersten $b$ Block. 
               Dann kann $vx$ keinen Buchstaben aus dem letzten $b$ Block enthalten. 
@@ -2701,7 +2711,7 @@ Zeigen Sie, dass folgende Sprachen nicht kontextfrei sind:
 % Greibach-Normalform
 \subsection{Greibach-Normalform}
 \begin{frame}
-\frametitle{Greibach Normalform}
+\frametitle{\textcolor{KITblue}{Greibach Normalform}}
 \begin{exampleblock}{Definition}
 Eine kontextfreie Grammatik ist in \textbf{Greibach-Normalform}, wenn alle Ableitungsregeln von der Form 
 $$ A \rightarrow a\alpha \text{ mit } A \in V\text{,} a\in \Sigma \text{ und } \alpha \in V^*$$
@@ -2710,7 +2720,7 @@ sind.
 \end{frame}
 
 \begin{frame}
-\frametitle{Zur Greibach-Normalform}
+\frametitle{\textcolor{KITblue}{Zur Greibach-Normalform}}
 \begin{itemize}
 \item Weitere Normalform für CH-2 Grammatiken, d.h. jede Grammatik kann in Greibachnormalform gebracht werden
 \item Zur Konstruktion von Kellerautomaten aus Grammatiken
@@ -2719,7 +2729,7 @@ sind.
 \end{frame}
 
 \begin{frame}
-\frametitle{Umwandlung in Greibach-Normalform}
+\frametitle{\textcolor{KITblue}{Umwandlung in Greibach-Normalform}}
 \begin{exampleblock}{Nebenbemerkung}
 Im folgenden stehen Kleinbuchstaben für Terminale, Großbuchstaben für einzelne Nichtterminale und griechische Buchstaben für (eventuell) mehrere Nichtterminale 
 \end{exampleblock}
@@ -2727,7 +2737,7 @@ Die Grammatik sei zunächst in Chomsky Normalform.
 \end{frame}
 
 \begin{frame}
-\frametitle{Annahmen}
+\frametitle{\textcolor{KITblue}{Annahmen}}
 \begin{block}{Annahmen}
 \begin{itemize}
  \item Wir gehen davon aus, dass Grammatik $G$ in Chomsky-Normalform ist, mit $V = \{A_1 ... A_m \}$ und $\Sigma = \{\alpha_1 ... \alpha_n\}$
@@ -2737,7 +2747,7 @@ Die Grammatik sei zunächst in Chomsky Normalform.
 \end{frame}
 
 \begin{frame}
-\frametitle{Schritt 1}
+\frametitle{\textcolor{KITblue}{Schritt 1}}
 Es gebe die Nichtterminale $\{A_0, \ldots, A_N\}$
 \begin{enumerate}
 \item für alle $i$ in $1, \ldots, N$
@@ -2752,7 +2762,7 @@ Es gebe die Nichtterminale $\{A_0, \ldots, A_N\}$
 \end{frame}
 
 \begin{frame}
-\frametitle{$A_i \rightarrow A_i\alpha$}
+\frametitle{\textcolor{KITblue}{$A_i \rightarrow A_i\alpha$}}
 Für Regeln der Form 
 $$A \rightarrow A\alpha_1 \mid \ldots \mid A\alpha_r$$
 $$A \rightarrow \beta_1 \mid \ldots \mid \beta_s$$
@@ -2765,13 +2775,13 @@ $$B \rightarrow \alpha_1B \mid \ldots \mid \alpha_rB$$
 \end{frame}
 
 \begin{frame}
- \frametitle{Schritt 2}
+ \frametitle{\textcolor{KITblue}{Schritt 2}}
 Gehen nun die Produktionen absteigend nach $k$ sortiert durch und simuliere bei alle Regeln mit $A_k \rightarrow A_j\alpha$ die Produktionen für $A_j$ auf der rechten Seite.\\
 Da alle Regeln die mit einem $A_i$ anfangen der Greibach-Normalform genügen, kann man dieses Verfahren nun bei den neuen Regeln für $B_1,\ldots$ auch anwenden, danach ist die Grammatik in Greibach-Normalform.
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgabe zur Greibach-Normalform}
+\frametitle{\textcolor{KITblue}{Aufgabe zur Greibach-Normalform}}
 Sei die Grammatik $G$ gegeben durch
 \begin{itemize}
  \item $\Sigma = \{0, 1\}$
@@ -2788,7 +2798,7 @@ Bringen Sie $G$ in Greibach-Normalform.
 % Kellerautomaten
 \subsection{Kellerautomat}
 \begin{frame}
-\frametitle{Definition}
+\frametitle{\textcolor{KITblue}{Definition}}
 Ein (nichtdeterministischer) \textbf{Kellerautomat} (NPDA bzw PDA, Pushdown Automaton) besteht aus $(Q, \Sigma, \Gamma, q_0, Z_0,\delta, F)$, wobei
 \begin{itemize}
 \item $Q$ endliche Zustandsmenge
@@ -2806,7 +2816,7 @@ Ein (nichtdeterministischer) \textbf{Kellerautomat} (NPDA bzw PDA, Pushdown Auto
 \end{frame}
 
 \begin{frame}
-\frametitle{Zu Kellerautomaten}
+\frametitle{\textcolor{KITblue}{Zu Kellerautomaten}}
 \begin{itemize}
 \item Akzeptieren wenn \emph{entweder} der Stack leer ist, \emph{oder} wenn der Automat in einen akzeptierenden Zustand kommt
 \item Sind im allgemeinen Nichtdeterministisch
@@ -2816,7 +2826,7 @@ Ein (nichtdeterministischer) \textbf{Kellerautomat} (NPDA bzw PDA, Pushdown Auto
 \end{frame}
 
 \begin{frame}
-\frametitle{Beispiel}
+\frametitle{\textcolor{KITblue}{Beispiel}}
 $M = (Q, \Sigma, \Gamma, q_0, Z_0, \delta, F)$
 \begin{itemize}
 \item $Q = \{q_0, q_1, q_2\}$, $Z_0 = \{\#\}$
@@ -2838,7 +2848,7 @@ $M = (Q, \Sigma, \Gamma, q_0, Z_0, \delta, F)$
 \end{frame}
 
 \begin{frame}
-\frametitle{Aufgaben}
+\frametitle{\textcolor{KITblue}{Aufgaben}}
 \begin{itemize}
 \item Welche Sprache akzeptiert der Beispielautomat der vorigen Folie?
 \end{itemize}
@@ -2852,7 +2862,7 @@ $M = (Q, \Sigma, \Gamma, q_0, Z_0, \delta, F)$
 %TODO: Beispiel Kellerautomat
 \subsection{Kellerautomat aus Greibach-Normalform}
 \begin{frame}
- \frametitle{Kellerautomat aus Greibach-Normalform}
+ \frametitle{\textcolor{KITblue}{Kellerautomat aus Greibach-Normalform}}
  \begin{block}{Erinnerung Greibach-Normalform}
   Eine kontextfreie Grammatik ist in \textbf{Greibach-Normalform}, wenn alle Ableitungsregeln von der Form   
   \[ A \rightarrow a\alpha \text{ mit } A \in V\text{,} a\in \Sigma \text{ und } \alpha \in V^*\]
@@ -2904,7 +2914,7 @@ Die ursprüngliche Grammatik hatte nur fünf Regeln.
 \end{frame}
 
 \begin{frame}
- \frametitle{Kellerautomat}
+ \frametitle{\textcolor{KITblue}{Kellerautomat}}
 \(PDA = (Q, \Sigma', \Gamma, q_0, Z_0, \delta, F)\) mit:
  \begin{itemize}
   \item $Q := \{q_0\}$
@@ -2921,7 +2931,7 @@ Die ursprüngliche Grammatik hatte nur fünf Regeln.
 \end{frame}
 
 \begin{frame}
- \frametitle{$\delta$}
+ \frametitle{\textcolor{KITblue}{$\delta$}}
 \begin{itemize}
  \item \(\delta(q_0, A_1, 0) = \{ (q_0, B_3A_1A_3), (q_0, A_1A_3)\}\)
  \item \(\delta(q_0, A_1, 1) = \{(q_0, A_3), (q_0, A_3A_2A_1A_3), (q_0, A_3A_2B_3A_1A_3) \}\)
@@ -2936,7 +2946,7 @@ Die ursprüngliche Grammatik hatte nur fünf Regeln.
 \end{frame}
 
 \begin{frame}
- \frametitle{Tripelkonstruktion}
+ \frametitle{\textcolor{KITblue}{Tripelkonstruktion}}
  \begin{itemize}
   \item Umkehrung der Konstruktionsrichtung
   \item Aus einem PDA $\mathcal{A} = (Q, \Sigma, \Gamma, \delta, q_0, Z_0)$ wird eine Grammatik \textit(G) mit $L_{\mathcal{A}} = L(G)$ erzeugt.
@@ -2956,7 +2966,7 @@ Die ursprüngliche Grammatik hatte nur fünf Regeln.
 %TODO: Beispiel Tripelkonstruktion
 
 \begin{frame}
- \frametitle{Wiederholung Chomsky-Hierarchie}
+ \frametitle{\textcolor{KITblue}{Wiederholung Chomsky-Hierarchie}}
  $u \in V^+$, $v \in (\Sigma \cup V)$, $A \in V$, $a \in \Sigma$.
   Ausnahme: S kommt bei Chomsky-1-Grammatiken nicht auf rechten Seiten vor.
  \begin{table}
@@ -2977,7 +2987,7 @@ Welche dieser Sprachenklassen sind unter der Komplementbildung abgeschlossen?
 \end{frame}
 
 \begin{frame}
- \frametitle{Anmerkung zum aktuellen Übungsblatt}
+ \frametitle{\textcolor{KITblue}{Anmerkung zum aktuellen Übungsblatt}}
  Die Greibach-Normalform muss nicht mit der Methode aus dem Skript erzeugt werden,
  die Anwendungsreihenfolge der Regeln (i) und (ii) kann selbst gewählt werden.
 \end{frame}
