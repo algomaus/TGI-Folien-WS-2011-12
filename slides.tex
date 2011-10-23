@@ -63,7 +63,9 @@
 	\begin{itemize}
 		\item Stoff soll wiederholt werden
 		\item Dabei Fokus auf Übungsbetrieb
-		\item Fragen/Vorschläge/Anmerkungen wilkommen!
+		\item Fragen/Vorschläge/Anmerkungen willkommen!
+		\item Folien basieren auf Tut-Folien von Simon Stroh und Moritz v. Looz im WS 2010/2011
+		\item Auf github unter \url {https://github.com/algomaus/TGI-Folien-WS-2011-12/}
 		%\item Wer Tee möchte darf sich bedienen :)
 	\end{itemize}
 \end{frame}
@@ -560,11 +562,16 @@ Sei $\Sigma = \{a, b\}$ und $L = \{a^nb^n\,|\,n\geq0\}$. (Also $L = \{\varepsilo
 Welche der folgenden Sprachen sind regulär? Begründen Sie Ihre Antwort.
 
 \begin{enumerate}
-\item $L=\{a^kc^lb^k \mid k, l \geq 0 \}$
 \item Die Menge aller Wörter über $\{0, 1\}$, sodass auf jede Null eine Eins folgt
-\item Die Menge der Wörter über $\{0, 1\}$, die die Form $w\bar{w}$ haben, wobei $\bar{w}$ aus $w$ gebildet
-wird, indem alle Nullen durch Einsen und alle Einsen durch Nullen ersetzt werden; so ist etwa 
-$\overline{011}=100$ und $011100$ ein Beispiel für ein Wort dieser Sprache
+\item $L=\{a^ib^jc^k \mid i < j < k\}$
+%\item Die Menge der Wörter über $\{0, 1\}$, die die Form $w\bar{w}$ haben, wobei $\bar{w}$ aus $w$ gebildet
+%wird, indem alle Nullen durch Einsen und alle Einsen durch Nullen ersetzt werden; so ist etwa 
+%$\overline{011}=100$ und $011100$ ein Beispiel für ein Wort dieser Sprache
+\item $L_1 = \{ww^R | w \in \{a,b\}^*\}$, wobei $w^R$ das
+        `Spiegelwort' zu $w$ ist (Sprache der Palindrome
+        gerader Länge)
+
+
 \end{enumerate}
 
 \end{frame}
