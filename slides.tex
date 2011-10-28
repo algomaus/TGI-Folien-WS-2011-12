@@ -115,8 +115,8 @@ Beispiel:
 \(\Sigma = \{a,b\}\)
 	\KITframe[Yeah, I think I'll stick to gray as a background color. Thanks again!]
 		{\parbox{\textwidth}{\begin{itemize}
-		\item \(L_1 = \{w| w \in \Sigma^*, w \mbox{w besteht aus einer geraden Anzahl $a$s}\)\}
-		\item \(L_2 =\{w| w \in \Sigma^*, w \mbox{w enthält gleich viele $a$s und $b$s.}\)\}		
+		\item \(L_1 = \{w| w \in \Sigma^*, \mbox{w besteht aus einer geraden Anzahl $a$s}\)\}
+		\item \(L_2 =\{w| w \in \Sigma^*, \mbox{w enthält gleich viele $a$s und $b$s.}\)\}		
 		\end{itemize}}
 	}
 	\(L_1\) ist regulär, \(L_2\) nicht.
@@ -151,7 +151,7 @@ Beispiel:
 	\setcounter{enumi}{0}
 	\item Aufgabe: Konstruiere einen DEA, der alle durch 4 teilbaren Zahlen akzeptiert. Als Eingabe erhält der Automat dabei die Zahl in ihrer binären Darstellung. Also ist $\Sigma = \{0, 1\}$. Z.B. soll der Automat $8_{10} = 1000_{2}$ akzeptieren, aber $7_{10} = 111_{2}$ ablehnen.
 	\pause \\[10pt]
-	Tip: Restklassen als Zustände modellieren
+	Tipp: Restklassen als Zustände modellieren (Kommentar: Es geht auch mit 3)
 	\end{enumerate}
 \end{frame}
 \begin{frame}
@@ -183,7 +183,7 @@ Beispiel:
 	\draw (q_1) edge [loop above] node {$y$, $x$} (q_1);
 	\end{tikzpicture}
 	\end{figure}
-	\pause Bei Eingabe von $y$ im Zustand $q_1$ gibt es mehrere Möglichkeiten.
+	\pause Bei Eingabe von $x$ im Zustand $q_1$ gibt es mehrere Möglichkeiten.
 \end{frame}
 
 \begin{frame}
@@ -417,7 +417,7 @@ So folgt: Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \item Für jede reguläre Sprache gilt das Pumping-Lemma, nicht jede Sprache für die das Pumping-Lemma gilt ist regulär!
 \item In der Übung wird üblicherweise die Kontraposition des Pumping-Lemmas verwendet. Man zeigt für eine Sprache, dass das Pumping-Lemma \textcolor{KITblue}{nicht} erfüllt ist, und daraus folgt, dass diese Sprache \textcolor{KITblue}{nicht} regulär sein kann.
 \begin{itemize}
-\item Konkret: Finden wir für \textcolor{KITblue}{jedes} $n$ \textcolor{KITblue}{ein} $w$ mit $\left|w\right| > n$, so dass für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$, ein $i \in \mathbb{N}_0$ mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
+\item Konkret: Finden wir für \textcolor{KITblue}{jedes} $n$ \textcolor{KITblue}{ein} $w$ mit $\left|w\right| > n$, so dass für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$, \textcolor{KITblue}{ein} $i \in \mathbb{N}_0$ mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
 \item \textbf{Wichtig:} Alle Quantoren werden umgekehrt.
 \end{itemize}
 \end{itemize}
@@ -429,7 +429,7 @@ Sei $\Sigma = \{a, b\}$ und $L = \{a^nb^n\,|\,n\geq0\}$. (Also $L = \{\varepsilo
 \begin{enumerate}
 \item Für ein $n$ wähle das Wort $w = a^nb^n$.
 \item Es ist also $\left|w\right| > n$.
-\item Nun ist aber für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $\left|uv\right| \leq n$ und $v \neq \varepsilon$ $v = a^m$ mit $m \geq 0$. Demnach ist $uv^0x = a^lb^n \neq L$, da $l < n$.
+\item Nun ist aber für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $\left|uv\right| \leq n$ und $v \neq \varepsilon$ $v = a^m$ mit $m > 0$. Demnach ist $uv^0x = a^lb^n \notin L$, da $l < n$.
 \item Daher kann $L$ nicht regulär sein.
 \end{enumerate}
 
@@ -488,7 +488,7 @@ Wir wissen: Jeder DEA hat einen regulären Ausdruck, der genau die Sprache besch
 \item Es ist \textcolor{KITblue}{$L = \cup_{f\in F} L_{s,n,f}$}
 \item Es ist weiterhin \textcolor{KITblue}{$L_{q_r,i+1,q_t} = L_{q_r,i,q_t} \cup (L_{q_r,i,q_{i+1}}(L_{q_{i+1},i,q_{i+1}})^*L_{q_{i+1},i,q_t})$}
 \item Letztlich ist: $L_{q_r, 0, q_t}$ immer regulär, das sind die Zeichen mit denen man ohne weitere Zustände zu verwenden von $q_r$ nach $q_t$ kommt (sowie $\varepsilon$ falls $r = t$).
-\item Unter Benutzung dieser Punkte, kann man nun einen regulären Ausdruck zu einem DEA Konstruieren.
+\item Unter Benutzung dieser Punkte, kann man nun einen regulären Ausdruck zu einem DEA konstruieren.
 \end{itemize}
 \end{frame}
 \begin{frame}
