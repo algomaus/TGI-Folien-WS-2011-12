@@ -400,24 +400,24 @@ DEA. Geben Sie hierbei die Übergangsfunktion tabellarisch an.
 
 %Pumpin' Lemma
 \begin{frame}
-\frametitle{\textcolor{KITblue}{Pumping Lemma}}
-\begin{exampleblock}{Pumping Lemma}
-Sei $L$ eine reguläre Sprache, dann existiert eine Zahl $n \in \mathbb{N}$, so dass für jedes Wort $w \in L$ mit $\left|w \right| > n$ eine Darstellung $$w = uvx$$ existiert, sodass folgende Eigenschaften erfüllt sind:
+\frametitle{\textcolor{KITblue}{Pumping-Lemma}}
+\begin{exampleblock}{Pumping-Lemma}
+Sei $L$ eine reguläre Sprache. Dann existiert eine Zahl $n \in \mathbb{N}$, so dass für jedes Wort $w \in L$ mit $\left|w \right| > n$ eine Darstellung $$w = uvx$$ existiert, so dass folgende Eigenschaften erfüllt sind:
 
 \begin{enumerate}
 \item $v \neq \varepsilon$ 
 \item $\left|uv\right| \leq n$ 
+\item Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \end{enumerate}
-So folgt: Für alle $i \in \mathbb{N}_0$ gilt: $uv^ix \in L$
 \end{exampleblock}
 \end{frame}
 \begin{frame}
-\frametitle{\textcolor{KITblue}{Pumping Lemma: Übersicht}}
+\frametitle{\textcolor{KITblue}{Pumping-Lemma: Übersicht}}
 \begin{itemize}
 \item Für jede reguläre Sprache gilt das Pumping-Lemma, nicht jede Sprache für die das Pumping-Lemma gilt ist regulär!
 \item In der Übung wird üblicherweise die Kontraposition des Pumping-Lemmas verwendet. Man zeigt für eine Sprache, dass das Pumping-Lemma \textcolor{KITblue}{nicht} erfüllt ist, und daraus folgt, dass diese Sprache \textcolor{KITblue}{nicht} regulär sein kann.
 \begin{itemize}
-\item Konkret: Finden wir für \textcolor{KITblue}{jedes} $n$ \textcolor{KITblue}{ein} $w$ mit $\left|w\right| > n$, so dass für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$, \textcolor{KITblue}{ein} $i \in \mathbb{N}_0$ mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
+\item Konkret: Finden wir für \textcolor{KITblue}{jedes} $n \in \mathbb{N}$ \textcolor{KITblue}{ein} $w \in L$ mit $\left|w\right| > n$, so dass für \textcolor{KITblue}{jede} Darstellung $w = uvx$ mit $v \neq \varepsilon$ sowie $\left|uv\right| \leq n$ \textcolor{KITblue}{ein} $i \in \mathbb{N}_0$ existiert mit $uv^ix \notin L$, dann ist $L$ nicht regulär.
 \item \textbf{Wichtig:} Alle Quantoren werden umgekehrt.
 \end{itemize}
 \end{itemize}
@@ -436,7 +436,7 @@ Sei $\Sigma = \{a, b\}$ und $L = \{a^nb^n\,|\,n\geq0\}$. (Also $L = \{\varepsilo
 \end{frame}
 
 \begin{frame}
-\frametitle{\textcolor{KITblue}{Pumping Lemma: Aufgaben}}
+\frametitle{\textcolor{KITblue}{Pumping-Lemma: Aufgaben}}
 Welche der folgenden Sprachen sind regulär? Begründen Sie Ihre Antwort.
 
 \begin{enumerate}
@@ -485,10 +485,10 @@ Welche der folgenden Sprachen sind regulär? Begründen Sie Ihre Antwort.
 Wir wissen: Jeder DEA hat einen regulären Ausdruck, der genau die Sprache beschreibt, die der Automat akzeptiert. Wie konstruiert man nun diesen RA aus dem DEA?\\[0.6cm]
 \textbf{Idee:} Betrachte die Sprachen $L_{q_r,i,q_t}$, definiert als \( w \in \Sigma^*\) mit $w$ überführt $q_r$ in $q_t$ unter Benutzung der Zwischenzustände $\{q_1,\ldots,q_i\}$
 \begin{itemize}
-\item Es ist \textcolor{KITblue}{$L = \cup_{f\in F} L_{s,n,f}$}
+\item Es ist \textcolor{KITblue}{$L = \bigcup\limits_{f\in F} L_{s,n,f}$}
 \item Es ist weiterhin \textcolor{KITblue}{$L_{q_r,i+1,q_t} = L_{q_r,i,q_t} \cup (L_{q_r,i,q_{i+1}}(L_{q_{i+1},i,q_{i+1}})^*L_{q_{i+1},i,q_t})$}
-\item Letztlich ist: $L_{q_r, 0, q_t}$ immer regulär, das sind die Zeichen mit denen man ohne weitere Zustände zu verwenden von $q_r$ nach $q_t$ kommt (sowie $\varepsilon$ falls $r = t$).
-\item Unter Benutzung dieser Punkte, kann man nun einen regulären Ausdruck zu einem DEA konstruieren.
+\item Letztlich ist $L_{q_r, 0, q_t}$ immer regulär, das sind die Zeichen mit denen man ohne weitere Zustände zu verwenden von $q_r$ nach $q_t$ kommt (sowie $\varepsilon$ falls $r = t$).
+\item Unter Benutzung dieser Punkte kann man nun einen regulären Ausdruck zu einem DEA konstruieren.
 \end{itemize}
 \end{frame}
 \begin{frame}
@@ -675,7 +675,7 @@ Nein!
   Zwei Zustände $p$ und $q$ eines deterministischen endlichen Automaten heißen \textcolor{KITblue}{äquivalent} ($p \equiv $q),
   wenn für alle Wörter $w\in\Sigma^*$ gilt:
   \[
-   \delta(p, w)\in F \leftrightarrow \delta(q, w)\in F
+   \delta(p, w)\in F \Leftrightarrow \delta(q, w)\in F
   \]
   Offensichtlich ist $\equiv$ eine Äquivalenzrelation. Mit $[p]$ bezeichnen wir die Äquivalenzklasse der zu $p$ äquivalenten Zustände.
  \end{block}
@@ -878,7 +878,7 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
  \begin{block}{Definition 2.25}
  Für eine Sprache \(L \subseteq \Sigma^*\) ist die \textcolor{KITblue}{Nerode-Relation} \(R_L\) definiert durch:
   
-  für \(x, y \in \Sigma^*\) ist $x$ $R_L$ $y$ genau dann wenn \((xz \in L \leftrightarrow yz \in L)\) für alle $z \in \Sigma^*$ gilt.
+  für \(x, y \in \Sigma^*\) ist $x$ $R_L$ $y$ genau dann wenn \((xz \in L \Leftrightarrow yz \in L)\) für alle $z \in \Sigma^*$ gilt.
  \end{block}
   \begin{block}{Erinnerung}
    Die minimale Anzahl an Zuständen eines endlichen Automaten einer Sprache $L \subseteq \Sigma^*$ entspricht dem Index der Nerode-Relation.
@@ -1030,7 +1030,7 @@ getrennte Binärworte aus $\{0,1\}^*$ addiert.
 	ein Wort $w \in \Sigma^*$ genau dann akzeptiert, wenn $w \in L$ gilt.
   \item Eine Sprache $L \subseteq \Sigma^*$ heißt \textcolor{KITblue}{rekursiv-aufzählbar} oder \textcolor{KITblue}{semi-entscheidbar}, wenn es eine Turingmaschine gibt, 
 	die genau $w$ genau dann akzeptiert, wenn $w \in L$ gilt. Das Verhalten der Turingmaschine für Eingaben $w \not\in L$ ist damit nicht definiert.
-	Sie stoppt entweder nicht in einem Endzustand oder aber stoppt garnicht.
+	Sie stoppt entweder nicht in einem Endzustand oder aber stoppt gar nicht.
  \end{enumerate}
 \end{frame}
 
@@ -2036,7 +2036,7 @@ Aufgabe: Beschreibe $co$-$SUBSET-SUM$
 $\mathcal{NP}$-Intermediate := $\mathcal{NP} \backslash (\mathcal{NPC} \cup \mathcal{P})$
 \end{block}
 $$ $$ % Yes, I am fully aware of the uglyness involved here
-Da $\mathcal{NPI} \neq \emptyset \iff \mathcal{P} \neq \mathcal{P}$, sind natürlich keine Probleme aus $\mathcal{NPI}$ bekannt, es gibt jedoch einige Kandidaten:\\
+Da $\mathcal{NPI} \neq \emptyset \iff \mathcal{P} \neq \mathcal{NP}$, sind natürlich keine Probleme aus $\mathcal{NPI}$ bekannt, es gibt jedoch einige Kandidaten:\\
 Graphisomorphie, Faktorisieren sowie diskrete Logarithmen.\\
 Aufgrund ihrer Eigenschaften sind diese Probleme in der Kryptographie alle von großer Bedeutung.
 \end{frame}
@@ -2621,8 +2621,8 @@ Ist das Wort $abcccc$ in der Sprache $\mathcal{L}(\textit{G})$?
 \end{frame}
 
 \section{11. Tutoriumsvorschlag}
-% Pumping Lemma für Kontextfreie Sprachen
-\subsection{Pumping Lemma für kontextfreie Sprachen}
+% Pumping-Lemma für Kontextfreie Sprachen
+\subsection{Pumping-Lemma für kontextfreie Sprachen}
 \begin{frame}
 \frametitle{\textcolor{KITblue}{Pumping-Lemma für kontextfreie Sprachen}}
 \begin{exampleblock}{Lemma}
@@ -2670,7 +2670,7 @@ Wenn wir in $z$ mindestens $n$ Buchstaben markieren, so lässt sich $z$ so als $
 \begin{frame}
 \frametitle{\textcolor{KITblue}{Zu Ogden und Pumping ...}}
 \begin{itemize}
-\item Anwendung genau wie ``altes'' Pumping Lemma
+\item Anwendung genau wie ``altes'' Pumping-Lemma
 \item Wird verwendet um zu zeigen das eine Sprache nicht kontextfrei ist
 \item Dazu: Kontraposition bilden und folgern das Sprache nicht kontextfrei
 \end{itemize}
