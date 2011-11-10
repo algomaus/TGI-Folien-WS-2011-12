@@ -713,164 +713,16 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
   \end{itemize}
  \end{block}
 \end{frame}
+
 \begin{frame}
- \frametitle{\textcolor{KITblue}{Konstruktion der Äquivalenzklassen}}
- \begin{block}{}
-  \begin{enumerate}
-   \item Fasse alle Zustände $q_i \in Q$ in eine Klasse zusammen.
-   \item $\varepsilon$ trennt Zustände aus $F$ von denen aus $Q \backslash F$
-   \item Für Zustandspaare $p, q$ in einer Klasse und
-   Worte $w\in \Sigma^*$ mit wachsender Länge: 
-    \begin{enumerate}
-    \item falls $[\delta(p, w)] != [\delta(q, w)]$ trenne die Zustände $q$ und $p$. (w ist Zeuge)
-    \item breche ab falls sich für eine Wortlänge keine weiteren Zeugen finden.
-    \end{enumerate}
-  \end{enumerate}
- \end{block}
+ \frametitle{\textcolor{KITblue}{Aufgabe}}
+ Konstruieren Sie zu folgendem DEA den Äquivalenzklassenautomaten:
+
+ \begin{center}
+   \includegraphics[scale=1.5]{images/Minimierung}
+ \end{center}
+ 
 \end{frame}
-\begin{frame}
- \frametitle{\textcolor{KITblue}{Beispiel $Q'$}}
- \vspace{-1cm}
- \begin{figure}[h]
-\begin{center}
-\begin{tikzpicture}[scale=0.5,node distance=1.9cm,shorten >=1pt,auto]
-\node[state,initial]   (q_1)                {$q_1$};
-\node[state,accepting] (q_2) [right of=q_1] {$q_2$};
-\node[state,accepting] (q_3) [right of=q_2] {$q_3$};
-
-\path[->]	(q_1) 	edge 			node {$a$} 		(q_2)
-		(q_2)	edge 			node {$b$}		(q_3)
-		(q_3)	edge [loop above]	node {$b$}		();
-\end{tikzpicture}
-\end{center}
-\end{figure}
- \begin{block}{Anfangs}
-  $\{q_1, q_2, q_3\}$
- \end{block}
- \pause
- \begin{block}{Zeugen der Länge 0: $\varepsilon$}
-  $\{q_1\} \{q_2, q_3\}$
- \end{block}
-  \pause
-  \begin{block}{Zeugen der Länge 1: a, b}
-   $a$ oder $b$ trennen keine Zustände mehr voneinander $\rightarrow$ Abbruch.
-  \end{block}
-\end{frame}
-
-\frame{
-  \frametitle{\textcolor{KITblue}{Automaten-Minimierung: Beispiel, Methode 1}}
-%   \begin{center}
-%   (Benötigt wird ein vollständiger DEA.)
-%   \end{center}
-  \begin{figure}[H]
-  \begin{center}
-  \begin{tikzpicture}[node distance=1.8cm]
-  \tikzstyle{every node}=[circle,thick,minimum size=7mm]
-  \tikzstyle{normal}=[draw]
-
-
-  \node[normal,double]  (q0)                      {$q_0$};
-  \node[normal]         (q1)  [above right of=q0] {$q_1$};
-  \node[normal]         (q2)  [right of=q1]       {$q_2$};
-  \node[normal]         (q3)  [below right of=q0] {$q_3$};
-  \node[normal]         (q4)  [right of=q3]       {$q_4$};
-  
-  \node (start) [left of=q0,xshift=0.5cm] {};
-  
-  \draw[->] (start) to (q0);
-
-  \draw[->,bend left] (q0)  to node[above] {1} (q1);
-  \draw[->,loop below] (q0)  to node [below] {0} (q0);
-
-  \draw[->,bend left] (q1)  to node[below] {1} (q0);
-  \draw[->] (q1)  to node[above] {0} (q2);
-
-  \draw[->] (q2) to node[above] {0} (q3);
-  \draw[->,loop right] (q2) to node[right] {1} (q2);
-
-  \draw[->] (q3)  to node[above] {1} (q0);
-  \draw[->,bend left] (q3)  to node[above] {0} (q4);
-  
-  \draw[->,bend left] (q4)  to node[below] {0} (q3);
-  \draw[->] (q4)  to node[right] {1} (q2);
-
-  \end{tikzpicture}
-  \end{center}
-  \end{figure}
-}
-
-\frame{
-  \frametitle{\textcolor{KITblue}{Minimierung, Ausführlicheres Beispiel/Aufgabe}}
-  \begin{figure}[H]
-  \begin{center}
-  \begin{tikzpicture}
-
-  \node (a0) {$\{q_0\}$};
-  \node[right of=a0,xshift=2cm] (b0) {\{$q_1$, $q_2$, $q_3$, $q_4$\}};
-
-  \end{tikzpicture}
-  \end{center}
-  \end{figure}
-}
-
-\frame{
-  \frametitle{\textcolor{KITblue}{Minimierung, Ausführlicheres Beispiel}}
-  \begin{figure}[H]
-  \begin{center}
-  \begin{tikzpicture}
-
-  \node (a0) {$\{q_0\}$};
-  \node[right of=a0,xshift=2cm] (b0) {\{$q_1$, $q_2$, $q_3$, $q_4$\}};
-
-  \node[below of=a0,yshift=-1cm] (a1) {$\{q_0\}$};
-  \node[right of=a1,xshift=1cm] (b1) {\{$q_1$, $q_3$\}};
-  \node[right of=b1,xshift=1cm] (c1) {\{$q_2$, $q_4$\}};
-
-  \draw[->] (a1) to node[left] {0} (a0);
-  \draw[->] (a1) to node[above] {1} (b0);
-  \draw[->] (b1) to node[left] {1} (a0);
-  \draw[->] (b1) to node[left] {0} (b0);
-  \draw[->] (c1) to node[right] {0,1} (b0);
-
-  \end{tikzpicture}
-  \end{center}
-  \end{figure}
-}
-\frame{
-  \frametitle{\textcolor{KITblue}{Minimierung, Ausführlicheres Beispiel}}
-  \begin{figure}[H]
-  \begin{center}
-  \begin{tikzpicture}
-
-  \node (a0) {$\{q_0\}$};
-  \node[right of=a0,xshift=2cm] (b0) {\{$q_1$, $q_2$, $q_3$, $q_4$\}};
-
-  \node[below of=a0,yshift=-1cm] (a1) {$\{q_0\}$};
-  \node[right of=a1,xshift=1cm] (b1) {\{$q_1$, $q_3$\}};
-  \node[right of=b1,xshift=1cm] (c1) {\{$q_2$, $q_4$\}};
-
-  \node[below of=a1,yshift=-1cm] (a2) {$\{q_0\}$};
-  \node[right of=a2,xshift=1cm] (b2) {\{$q_1$, $q_3$\}};
-  \node[right of=b2,xshift=1cm] (c2) {\{$q_2$, $q_4$\}};
-
-  \draw[->] (a1) to node[left] {0} (a0);
-  \draw[->] (a1) to node[above] {1} (b0);
-  \draw[->] (b1) to node[left] {1} (a0);
-  \draw[->] (b1) to node[left] {0} (b0);
-  \draw[->] (c1) to node[right] {0,1} (b0);
-
-  \draw[->] (a2) to node[left] {0} (a1);
-  \draw[->] (a2) to node[left] {1} (b1);
-  \draw[->] (b2) to node[left] {0} (c1);
-  \draw[->] (b2) to node[left] {1} (a1);
-  \draw[->] (c2) to node[left] {0} (b1);
-  \draw[->] (c2) to node[left] {1} (c1);
-
-  \end{tikzpicture}
-  \end{center}
-  \end{figure}
-}
-
 
 \subsection{Nerode-Relation}
 \begin{frame}
@@ -884,20 +736,14 @@ Hier sind $q_2$ und $q_3$ äquivalent. Warum?
    Die minimale Anzahl an Zuständen eines endlichen Automaten einer Sprache $L \subseteq \Sigma^*$ entspricht dem Index der Nerode-Relation.
   \end{block}
 \end{frame}
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Aufgabe zur Nerode-Relation}}
-Bestimmen Sie die Äquivalenzklassen der Nerode-Relation zur Sprache $L=\{a^ib^jc^k \mid i,j,k \in \mathbb{N}_{>0} \}$ über dem Alphabet $\Sigma=\{a,b,c\}$.
-\end{frame}
-\begin{frame}
- Sei $\Sigma = \{a,b,c\}.$ Geben Sie die Äquivalenzklassen der Nerode-Relation
-zur Sprache
 
-\begin{quote}
-  $L = \{w \in \Sigma^*: |w|_a \equiv 0 \textup{ mod } 2 \textup{ und } |w|_b
-  \equiv |w|_c \equiv 1 \textup{ mod } 2\}$
-\end{quote}
-
-an, und konstruieren Sie den Automaten der Nerode-Relation.
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgaben zur Nerode-Relation}}
+Geben Sie für die folgenden Sprachen jeweils die Äquivalenzklassen bezüglich der Nerode-Relation $R_L$ an. Welche der Sprachen sind regulär? Begründen Sie ihre Antwort. Konstruieren Sie für diese Sprachen jeweils den Minimalautomaten.
+\begin{itemize}
+  \item $L_1 = \{a^{2i} \mid i \in \mathbb{N}_0, i \geq 1\}$, $\Sigma=\{a\}$
+  \item $L_2 = \{ww \mid w \in \{0,1\}^*\}$, $\Sigma=\{0,1\}$
+\end{itemize}
 \end{frame}
 
 \section{Turingmaschinen und Berechenbarkeit}
@@ -956,7 +802,7 @@ mit einem freibeweglichen Lese-/Schreibkopf, der von einer \textcolor{KITblue}{e
 \end{frame}
 \begin{frame}
 \vspace{-1cm}
-\begin{block}{Definiton}
+\begin{block}{Definition}
 Eine Turingmaschine wird definiert als:
  \begin{itemize}
  \item $Q$, eine endliche Zustandsmenge
@@ -996,9 +842,60 @@ Eine Turingmaschine wird definiert als:
 					Symbol keinen Zustandsübergang gibt, bricht die Maschine die Berechnung ab. 
 }
 
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Konfigurationen}}
+Oft wird die Situation, in der sich eine Turingmaschine $\mathcal{M} =(Q,\Sigma,\Gamma,\delta,s,F)$ befindet, durch die Angabe der
+\emph{Konfiguration} in der Form \textcolor{KITblue}{$w(q)av$} codiert, wobei $w,v \in \Gamma^*, a
+\in \Gamma$ und $q\in Q$ sind. Dies bedeutet, dass sich $\mathcal{M}$ gerade im
+Zustand $q$ befindet; der Lesekopf steht auf dem Zeichen $a$; links davon
+steht das Wort $w$ und rechts davon das Wort $v$ auf dem Rechenband.
+\end{frame}
 
 \begin{frame}
-\frametitle{\textcolor{KITblue}{Turingmaschine}}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+\vspace{-1cm}
+Gegeben sei nun die Turingmaschine $\mathcal{M}$ durch das folgende Zustandsdiagramm:
+
+\begin{center}
+     \includegraphics[scale=0.7]{images/Uebungsblatt_2_A5}
+   \end{center}
+
+ Welche Konfigurationen durchläuft die Maschine bei Eingabe des
+  Wortes $01010$?
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+\vspace{-1cm}
+\begin{center}
+     \includegraphics[scale=0.7]{images/Uebungsblatt_2_A5}
+   \end{center}
+   
+ Welche Aufgabe haben die Zustände $q_2, q_3$ und $q_4$?
+       (Hinweis: Überlegen Sie dazu, was passiert, wenn $\mathcal{M}$ sich im Zustand $q_2$ befindet und der Lesekopf auf dem letzten Zeichen der Eingabe steht, bis zu dem Zeitpunkt, zu dem das erste Mal $X$ gelesen wird.)
+\end{frame}
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+\vspace{-1cm}
+\begin{center}
+     \includegraphics[scale=0.7]{images/Uebungsblatt_2_A5}
+   \end{center}
+   
+ Wie verändert $\mathcal{M}$ die Eingabe?
+\end{frame}
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+Entwerfen Sie eine deterministische Turing-Maschine $\mathcal M := (Q, \Sigma, \Gamma, \delta, s, F)$, die genau die folgende Sprache akzeptiert: $$L:=\{ww^R \mid w \in \{a, b\}^*\}$$ wobei $w^R$ das "`Spiegelwort"'~zu $w$ ist.
+Dies ist die Sprache der Palindrome gerader Länge. Beschreiben Sie zunächst kurz in Worten, wie Ihre Turing-Maschine arbeitet.
+Spezifizieren Sie $\mathcal M$ dann explizit durch Angabe eines Zustandsdiagramms oder einer formalen Spezifikation.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
  \label{sec:busy_beaver}
 
 Konstruieren Sie eine Turingmaschine, die aus drei Zuständen (plus einem
@@ -1008,16 +905,20 @@ weiteren Haltezustand $q_f$) besteht und folgendes Verhalten hat:
   hintereinander und \textbf{hält} nach endlich vielen Schritten.
 \end{quote}
 Die Turingmaschine soll folgende Alphabete verwenden: $\Sigma = \{{\tt 1}\},
-\Gamma = \Sigma \cup \{{\tt 0}\}$.  Insbesondere ist also ${\tt 0}$ das
+\Gamma = \Sigma \cup \{\sqcup\}$.  Insbesondere ist also $\sqcup$ das
 Blanksymbol.
 
 Welche Konfigurationen durchläuft die Maschine, wenn Sie auf dem leeren Band
 gestartet wird?  Welche Konfigurationen durchläuft die Maschine bei Eingabe
 des Wortes {\tt 101}?
 \end{frame}
+
 \begin{frame}
- Geben Sie eine wohldokumentierte Turingmaschine an, die zwei durch Blank
-getrennte Binärworte aus $\{0,1\}^*$ addiert.
+	\vspace{-1cm}
+	\begin{center}
+	\includegraphics[width=0.75\textwidth]{images/turing.pdf}
+	\end{center}
+	\tiny{Quelle: \url{www.cs.utah.edu/~draperg/cartoons/2005/turing.png}}
 \end{frame}
 
 \subsection{Entscheidbarkeit}
