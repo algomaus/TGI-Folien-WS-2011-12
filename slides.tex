@@ -1177,22 +1177,6 @@ Zeigen Sie, dass die Sprache $L_\emptyset := \{ <\mathcal{M}> \mid \mathcal{M}  
 Zeigen Sie, dass die Komplementsprache $L_\emptyset^c$ zu $L_\emptyset$ semi-entscheidbar ist.
 \end{frame}
 
-\subsection{Satz von Rice}
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Satz von Rice}}
-Der Satz von Rice sagt aus, dass es unmöglich ist, eine nichttriviale Eigenschaft von Turingmaschinen algorithmisch zu entscheiden.
-\begin{block}{Formale Version}
-Es sei $R$ die Klasse aller Turing-berechenbaren Funktionen und $S$ eine beliebige nichttriviale (das bedeutet $S \neq \emptyset$ und $S \neq R$) Teilmenge davon. Dann ist die Sprache
-$$ C_S = \{ i \mid \text{ die von $M_i$ berechnete Funktion liegt in $S$} \} $$
-unentscheidbar. 
-\end{block}
-\end{frame}
-% Beispiel
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Beispiel}}
-Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nicht möchte (das ist eine Teilmenge der Turingberechenbaren Funktionen) ist unentscheidbar. Daraus folgt, dass es keinen perfekten Virenscanner geben kann!
-\end{frame}
-
 % Aufgabe
 %\begin{frame}
 %\frametitle{\textcolor{KITblue}{Aufgabe}}
@@ -1248,6 +1232,22 @@ $ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
 4,2,1,3,4,1,1,3,4,4,4,2,1,2,1,1,1,3,4,3,4,1,2,\\
 1,4,4,2,1,4,1,1,3,4,1,1,3,1,1,3,1,2,1,4,1,1,3)
 \end{center}
+\end{frame}
+
+\subsection{Satz von Rice}
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Satz von Rice}}
+Der Satz von Rice sagt aus, dass es unmöglich ist, eine nichttriviale Eigenschaft von Turingmaschinen algorithmisch zu entscheiden.
+\begin{block}{Formale Version}
+Es sei $R$ die Klasse aller Turing-berechenbaren Funktionen und $S$ eine beliebige nichttriviale (das bedeutet $S \neq \emptyset$ und $S \neq R$) Teilmenge davon. Dann ist die Sprache
+$$ C_S = \{ i \mid \text{ die von $M_i$ berechnete Funktion liegt in $S$} \} $$
+unentscheidbar. 
+\end{block}
+\end{frame}
+% Beispiel
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Beispiel}}
+Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nicht möchte (das ist eine Teilmenge der Turingberechenbaren Funktionen) ist unentscheidbar. Daraus folgt, dass es keinen perfekten Virenscanner geben kann!
 \end{frame}
 
 \subsection{Erweiterungen von Turingmaschinen}
