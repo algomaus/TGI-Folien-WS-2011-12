@@ -1030,6 +1030,24 @@ gestartet wird?
 \end{frame}
 
 \begin{frame}
+	\frametitle{\textcolor{KITblue}{Erinnerung - Zum Übungsbetrieb}}
+	\begin{itemize}
+		\item \textbf{Abgabe:} Handschriftlich in Zweiergruppen.
+		\item \textbf{Schein:} 
+		\begin{itemize}
+			\item \textcolor{KITblue}{Klausurbonus}
+			\item \textcolor{KITblue}{Ein Notenschritt}
+			\item Ab \textcolor{KITblue}{50\%} der erreichbaren Punkte
+		\end{itemize}
+		\item Tutoriumsmaterial und aktueller Punktestand online.
+		\begin{itemize}
+			\item \url{http://tgdi.de/}
+			\item Wer Punkte online einsehen will, email in Liste eintragen
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
  \frametitle{\textcolor{KITblue}{Wiederholung: Nerode-Relation}}
  \begin{block}{Definition 2.25}
  Für eine Sprache \(L \subseteq \Sigma^*\) ist die \textcolor{KITblue}{Nerode-Relation} \(R_L\) definiert durch:
@@ -1172,85 +1190,6 @@ $\mathcal{H} := \{wv \mid T_w \text{ hält auf Eingabe } v\}$
 Zeigen Sie, dass die Sprache $L_\emptyset := \{ <\mathcal{M}> \mid \mathcal{M}  \text{ Turingmaschine }, L(M) = \emptyset\}$ nicht entscheidbar ist.
 \end{frame}
 
-\begin{frame}
- \frametitle{\textcolor{KITblue}{Aufgabe zur Semi-Entscheidbarkeit}}
-
-Zeigen Sie, dass die Komplementsprache $L_\emptyset^c$ zu $L_\emptyset$ semi-entscheidbar ist.
-\end{frame}
-
-% Aufgabe
-%\begin{frame}
-%\frametitle{\textcolor{KITblue}{Aufgabe}}
-%Kann man die Entscheidbarkeit der folgenden Mengen mithilfe des Satzes von Rice bestimmen?
-%\begin{itemize}
-%\item Alle Turingmaschinen, die nur $0$ aufs Band schreiben.
-%\item Alle Turingmaschinen, die im ersten Schritt genau eine $0$ aufs Band schreiben und im %zweiten Schritt anhalten. 
-%\item Alle Turingmaschinen, die überhaupt etwas auf das Band schreiben.
-%\end{itemize}
-%\end{frame}
-
-\subsection{Postsches Korrespondenzproblem}
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Postsches Korrespondenzproblem}}
-Gegeben sei einer Folge von Paaren $((x_1, y_1), (x_2, y_2), \ldots, (x_n,y_n))$ von nichtleeren Worten über einem endlichen Alphabet. Dies nennt man eine \textbf{Instanz} des PKP.
-Eine nicht-leere Folge $I = i_1, i_2, \ldots, i_m$ von Indizes $\{1, \ldots, n\}$ heißt Lösung zu $P$, wenn $x_{i_1}x_{i_2}\ldots{}x_{i_m} = y_{i_1}y_{i_2}\ldots{}y_{i_m}$.
-\begin{block}{Beispiel}
-\begin{displaymath}
-\{ {a \choose aba}, {ab \choose bb}, {baa \choose aa} \}
-\end{displaymath}
-
-Lösung: $1,3,2,3$
-\begin{displaymath}
-{a \choose aba}, {baa \choose aa}, {ab \choose bb}, {baa \choose aa}
-\end{displaymath}
-
-\end{block}
-\end{frame}
-
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Aufgabe}}
-\begin{enumerate}
-\item Finde eine Lösung für folgende Instanz des Post'schen Korrespondenzproblems: 
-\[ ((aa, a), (b, aa), (a, aab)) \]
-  \item Zeigen Sie, dass folgende Instanz des Post'schen Korrespondenzproblems
-        keine Lösung hat:
-
-        \[ ((ab, b), (bba, abb), (ab, ba), (a, abb)) \]
-
-  \item Zeigen Sie, dass das Post'sche Korrespondenzproblem für Wörter
-über einem Alphabet mit nur einem Symbol entscheidbar ist.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Aufgabe}}
-Finde eine Lösung für folgendes PKP
-$$ ((001,0),(01,011),(01,101),(10,001)) $$
-\pause
-Eine kürzeste Lösung hat mindestens die Länge 66, z.B:
-\begin{center}
-$ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
-4,2,1,3,4,1,1,3,4,4,4,2,1,2,1,1,1,3,4,3,4,1,2,\\
-1,4,4,2,1,4,1,1,3,4,1,1,3,1,1,3,1,2,1,4,1,1,3)
-\end{center}
-\end{frame}
-
-\subsection{Satz von Rice}
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Satz von Rice}}
-Der Satz von Rice sagt aus, dass es unmöglich ist, eine nichttriviale Eigenschaft von Turingmaschinen algorithmisch zu entscheiden.
-\begin{block}{Formale Version}
-Es sei $R$ die Klasse aller Turing-berechenbaren Funktionen und $S$ eine beliebige nichttriviale (das bedeutet $S \neq \emptyset$ und $S \neq R$) Teilmenge davon. Dann ist die Sprache
-$$ C_S = \{ i \mid \text{ die von $M_i$ berechnete Funktion liegt in $S$} \} $$
-unentscheidbar. 
-\end{block}
-\end{frame}
-% Beispiel
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Beispiel}}
-Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nicht möchte (das ist eine Teilmenge der Turingberechenbaren Funktionen) ist unentscheidbar. Daraus folgt, dass es keinen perfekten Virenscanner geben kann!
-\end{frame}
-
 \subsection{Erweiterungen von Turingmaschinen}
 \begin{frame}
 \frametitle{\textcolor{KITblue}{Erweiterungen von Turingmaschinen}}
@@ -1356,36 +1295,103 @@ $$ \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,N,R,U,D\}$$
 \end{block}
 \end{frame}
 
-% Beispiel (if time)
-% Aufgabe
+\subsection{Wieder semi-entscheidbar}
+
 \begin{frame}
-\frametitle{\textcolor{KITblue}{Aufgabe}}
-\vspace{-1cm}
-Eine $k$-Band-Turingmaschine ist eine Turingmaschine mit $k$
-Arbeitsbändern und der Übergangsfunktion
-
-\[ \delta: Q \times \Gamma \times \{1, \ldots, k\} \to
-Q \times \Gamma \times \{L, R, N\} \times \{1, \ldots, k\}, \]
-
-wobei $\delta(q, a, i) = (p, b, X, j)$ bedeute:
-
-\begin{quote}
-  Wenn sich die Maschine im Zustand $q$ befindet und
-  auf Band $i$ das Symbol $a$ liest, so springt die Maschine in Zustand $p$,
-  überschreibt $a$ mit $b$, der Lese-Schreib-Kopf bewegt sich auf Band $i$
-  gemäß $X$ und springt auf Band $j$ an die Stelle, an der er sich
-  auf diesem Band zuletzt befunden hat.
-\end{quote}
-
-Die Eingabe befinde sich auf Band 1, und im Zustand $s$ befinde sich der
-Kopf an der ersten Stelle der Eingabe. Die Stelle, auf die der Kopf bei einem
-Wechsel auf ein bis dahin unbenutztes Band springt, sei
-festgelegt.
-Eine solche 2-Band-Turingmaschine habe nun Zeitaufwand $T(n)$.
-Zeigen Sie informell, dass diese von einer einfachen
-Turingmaschine mit Zeitaufwand $O(T^2(n))$ simuliert werden kann.\\
+	\frametitle{\textcolor{KITblue}{Wiederholung}}
+	\begin{block}{Semientscheidbarkeit}
+ Eine Sprache $L \subseteq \Sigma^*$ heißt \textcolor{KITblue}{rekursiv-aufzählbar} oder \textcolor{KITblue}{semi-entscheidbar}, wenn es eine Turingmaschine gibt, 
+	die genau $w$ genau dann akzeptiert, wenn $w \in L$ gilt. Das Verhalten der Turingmaschine für Eingaben $w \not\in L$ ist damit nicht definiert.
+	Sie stoppt entweder nicht in einem Endzustand oder aber stoppt gar nicht.
+	\end{block}
 \end{frame}
 
+\begin{frame}
+ \frametitle{\textcolor{KITblue}{Aufgabe zur Semi-Entscheidbarkeit}}
+
+Zeigen Sie, dass die Komplementsprache $L_\emptyset^c$ zu $L_\emptyset$ semi-entscheidbar ist.
+\end{frame}
+
+% Aufgabe
+%\begin{frame}
+%\frametitle{\textcolor{KITblue}{Aufgabe}}
+%Kann man die Entscheidbarkeit der folgenden Mengen mithilfe des Satzes von Rice bestimmen?
+%\begin{itemize}
+%\item Alle Turingmaschinen, die nur $0$ aufs Band schreiben.
+%\item Alle Turingmaschinen, die im ersten Schritt genau eine $0$ aufs Band schreiben und im %zweiten Schritt anhalten. 
+%\item Alle Turingmaschinen, die überhaupt etwas auf das Band schreiben.
+%\end{itemize}
+%\end{frame}
+
+\subsection{Postsches Korrespondenzproblem}
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Postsches Korrespondenzproblem}}
+Gegeben sei einer Folge von Paaren $((x_1, y_1), (x_2, y_2), \ldots, (x_n,y_n))$ von nichtleeren Worten über einem endlichen Alphabet. Dies nennt man eine \textbf{Instanz} des PKP.
+Eine nicht-leere Folge $I = i_1, i_2, \ldots, i_m$ von Indizes $\{1, \ldots, n\}$ heißt Lösung zu $P$, wenn $x_{i_1}x_{i_2}\ldots{}x_{i_m} = y_{i_1}y_{i_2}\ldots{}y_{i_m}$.
+\begin{block}{Beispiel}
+\begin{displaymath}
+\{ {a \choose aba}, {ab \choose bb}, {baa \choose aa} \}
+\end{displaymath}
+
+Lösung: $1,3,2,3$
+\begin{displaymath}
+{a \choose aba}, {baa \choose aa}, {ab \choose bb}, {baa \choose aa}
+\end{displaymath}
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+\begin{enumerate}
+\item Finde eine Lösung für folgende Instanz des Post'schen Korrespondenzproblems: 
+\[ ((aa, a), (b, aa), (a, aab)) \]
+  \item Zeigen Sie, dass folgende Instanz des Post'schen Korrespondenzproblems
+        keine Lösung hat:
+
+        \[ ((ab, b), (bba, abb), (ab, ba), (a, abb)) \]
+
+  \item Zeigen Sie, dass das Post'sche Korrespondenzproblem für Wörter
+über einem Alphabet mit nur einem Symbol entscheidbar ist.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+Finde eine Lösung für folgendes PKP
+$$ ((001,0),(01,011),(01,101),(10,001)) $$
+\pause
+Eine kürzeste Lösung hat mindestens die Länge 66, z.B:
+\begin{center}
+$ I_1 = $(2,4,3,4,4,2,1,2,4,3,4,3,4,4,3,4,4,2,1,4,\\
+4,2,1,3,4,1,1,3,4,4,4,2,1,2,1,1,1,3,4,3,4,1,2,\\
+1,4,4,2,1,4,1,1,3,4,1,1,3,1,1,3,1,2,1,4,1,1,3)
+\end{center}
+\end{frame}
+
+\subsection{Satz von Rice}
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Satz von Rice}}
+Der Satz von Rice sagt aus, dass es unmöglich ist, eine nichttriviale Eigenschaft von Turingmaschinen algorithmisch zu entscheiden.
+\begin{block}{Formale Version}
+Es sei $R$ die Klasse aller Turing-berechenbaren Funktionen und $S$ eine beliebige nichttriviale (das bedeutet $S \neq \emptyset$ und $S \neq R$) Teilmenge davon. Dann ist die Sprache
+$$ C_S = \{ i \mid \text{ die von $M_i$ berechnete Funktion liegt in $S$} \} $$
+unentscheidbar. 
+\end{block}
+\end{frame}
+% Beispiel
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Beispiel}}
+Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nicht möchte (das ist eine Teilmenge der Turingberechenbaren Funktionen) ist unentscheidbar. Daraus folgt, dass es keinen perfekten Virenscanner geben kann!
+\end{frame}
+
+\begin{frame}
+	\vspace{-1cm}
+	\begin{center}
+	\includegraphics[width=0.75\textwidth]{images/virus.pdf}
+	\end{center}
+	\tiny{Quelle: \url{http://www.semiconfundive.de/comics/2008-01-20.png}}
+\end{frame}
 
 \section{Probleme}
 \begin{frame}
