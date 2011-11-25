@@ -1298,7 +1298,7 @@ $$ \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,N,R,U,D\}$$
 \subsection{Wieder semi-entscheidbar}
 
 \begin{frame}
-	\frametitle{\textcolor{KITblue}{Wiederholung}}
+	\frametitle{\textcolor{KITblue}{Erinnerung}}
 	\begin{block}{Semientscheidbarkeit}
  Eine Sprache $L \subseteq \Sigma^*$ heißt \textcolor{KITblue}{rekursiv-aufzählbar} oder \textcolor{KITblue}{semi-entscheidbar}, wenn es eine Turingmaschine gibt, 
 	die genau $w$ genau dann akzeptiert, wenn $w \in L$ gilt. Das Verhalten der Turingmaschine für Eingaben $w \not\in L$ ist damit nicht definiert.
@@ -1309,7 +1309,12 @@ $$ \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,N,R,U,D\}$$
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Aufgabe zur Semi-Entscheidbarkeit}}
 
+\begin{block}{Erinnerung}
+	$L_\emptyset := \{ <\mathcal{M}> \mid \mathcal{M}  \text{ Turingmaschine }, L(M) = \emptyset\}$
+\end{block}
+\begin{block}{Aufgabe}
 Zeigen Sie, dass die Komplementsprache $L_\emptyset^c$ zu $L_\emptyset$ semi-entscheidbar ist.
+\end{block}
 \end{frame}
 
 % Aufgabe
@@ -1394,6 +1399,21 @@ Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nic
 	\tiny{Quelle: \url{http://www.semiconfundive.de/comics/2008-01-20.png}}
 \end{frame}
 
+\section{Wdh Entscheidbarkeit}
+\begin{frame}
+	\frametitle{\textcolor{KITblue}{Wiederholung Entscheidbarkeit}}
+	\textcolor{blue}{Wann ist eine Sprache $L$ entscheidbar?}
+	\pause
+	Eine Sprache $L \subseteq \Sigma^*$ heißt \textcolor{KITblue}{rekursiv} oder \textcolor{KITblue}{entscheidbar}, wenn es eine Turingmaschine gibt, die auf allen Eingaben stoppt und ein Wort $w \in \Sigma^*$ genau dann akzeptiert, wenn $w \in L$ gilt.
+\end{frame}
+
+\begin{frame}
+	\frametitle{\textcolor{KITblue}{Klausuraufgabe zur Entscheidbarkeit}}
+	Sei $L$ eine nicht entscheidbare Sprache \"uber dem Alphabet $\Sigma=\{0,1\}$ und sei $(01)^k \not\in L$ f\"ur jedes $k\in \mathbb N_{>0}$.
+Zeigen Sie: Die Sprache \[L' = \{w_1\#w_2\mid (w_1 \in L \wedge w_2 \not\in L) \text{ oder } (w_1 \not\in L \wedge w_2 \in L) \}\]
+\"uber dem Alphabet $\Sigma'=\{0, 1, \#\}$ ist nicht entscheidbar.
+\end{frame}
+
 \section{Probleme}
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Probleme}}
@@ -1470,11 +1490,13 @@ Die Klasse aller Programme die etwas auf einem Rechner tun, das der Benutzer nic
 
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Optimierungsproblem}}
- Gegeben sei ein Graph $G=(V,E)$ mit $V:=\{1,\ldots,n\}$ und $E\subseteq \{\{u,v\} \mid u,v \in V, u\neq v\}$. Weiter seien $c:E \rightarrow \mathbb{R}^+$ eine Längenfunktion auf den Kanten des Graphen sowie $s\in V$ ein ausgewiesener Start- und $t\in V$ ein ausgewiesener Zielknoten. 
-Ein Pfad von $s$ nach $t$ ist eine Folge von Kanten $p = \{i_1,i_2\},\{i_2,i_3\},\ldots,\{i_{k-2},i_{k-1}\},\{i_{k-1},i_k\}$ mit $\{i_j, i_{j+1}\} \in E$ und $i_1=s$ sowie $i_k=t$. 
-Die Länge des Pfades sei definiert als die Summe der Längen aller Kanten auf dem Pfad. 
-Betrachten Sie die Menge der Pfade, die von $s$ nach $t$ führen, und formulieren Sie ein naheliegendes Optimierungsproblem. 
-Formulieren Sie ein zu Ihrem Optimierungsproblem gehörendes Entscheidungsproblem.
+ Gegeben sei ein ungerichteter Graph $G=(V,E)$ mit $V:=\{1,\ldots,n\}$ und $E\subseteq \{\{u,v\} \mid u,v \in V, u\neq v\}$. Weiter seien $c:E \rightarrow \mathbb{R}^+$ eine Kostenfunktion auf den Kanten des Graphen sowie $s\in V$ und $t\in V$ zwei ausgewiesene Knoten. 
+Ein $s$-$t$-Schnitt $(S,T)$ in $G$ ist eine Partitionierung $(S,T)$ von $V$ in zwei Partitionen mit $s\in S$ und $t \in T$. Es gilt $S \cup T = V$ und $S\cap T = \emptyset$.
+Die Kosten c$(S,T)$ eines Schnittes $(S,T)$ seien definiert als die Summe der Kosten aller Kanten, deren eines Ende in $S$ und deren anderes Ende in $T$ liegt: 
+\[c(S,T) := \sum_{\{u,v\} \in E \text{ : } u\in S, v \in T}c(\{u,v\})\]
+%
+Betrachten Sie die Menge der $s$-$t$-Schnitte in $G$ und formulieren Sie ein naheliegendes Optimierungsproblem. 
+Formulieren Sie ein zu Ihrem Optimierungsproblem geh\"orendes Optimalwert-- und Entscheidungsproblem.
 \end{frame}
 
 \subsection{Kodierungsschemata}
@@ -1570,24 +1592,31 @@ Die folgende Sprache ist in $\mathcal{P}$: Die gerichteten Graphen zusammen mit 
 \textbf{Grober Beweis:}	Tiefensuche ist in $\mathcal{O}(|\mathcal{V}| + |\mathcal{E}|)$
 \end{frame}
 
-\begin{frame}
-\frametitle{\textcolor{KITblue}{Sind folgende Sprachen in $\mathcal{P}$?}}
-\begin{itemize}
-\item Die Wörter der deutschen Sprache
-\item Die ungraden Zahlen
-\item Eine reguläre Sprache $L$
-\item Die PCPs die eine Lösung haben
-\item Die unär kodierten Primzahlen
-\item Die binär kodierten Primzahlen
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{\textcolor{KITblue}{Sind folgende Sprachen in $\mathcal{P}$?}}
+%\begin{itemize}
+%\item Die Wörter der deutschen Sprache
+%\item Die ungraden Zahlen
+%\item Eine reguläre Sprache $L$
+%\item Die PCPs die eine Lösung haben
+%\item Die unär kodierten Primzahlen
+%\item Die binär kodierten Primzahlen
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
  \frametitle{\textcolor{KITblue}{Laufzeitbetrachtung}}
- Betrachten Sie $L_1 := L[\text{\textit{PRIMES}},s_1]$. 
-Ein naiver Algorithmus für \textit{PRIMES} könnte alle Zahlen $2,3,\ldots,p-1$ darauf hin überprüfen, ob sie die gegebene Zahl $p$ teilen. 
-Beschreiben Sie kurz in Worten die Arbeitsweise einer \textbf{deterministischen} Turing-Maschine, die diesen Algorithmus implementiert und damit $L_1$ entscheidet. 
-Geben Sie die Laufzeit Ihrer Turing-Maschine asymptotisch an. Ist $L_1$ in $\mathcal{P}$? Begründen Sie gegebenenfalls, warum $L_1$ in $\mathcal{P}$ ist.
+In dieser Aufgabe sowie in Aufgabe 4 bezeichne $s_1$ die un\"are Kodierung und $s_k$, $k >1$, die $k$-\"are Kodierung.
+Das Entscheidungprobelm \textit{PRIMES} fragt ob eine gegeben Zahl $q \in \mathbb N$ eine Primzahl ist.
+\begin{enumerate}
+\item Betrachten Sie $L_1 := L[\text{\textit{PRIMES}},s_1]$. Ein naiver Algorithmus f\"ur \textit{PRIMES} k\"onnte alle Zahlen $2,3,\ldots,p-1$ darauf hin \"uberpr\"ufen, ob sie die gegebene Zahl $p$ teilen. Beschreiben Sie kurz in Worten die Arbeitsweise einer \textbf{deterministischen} Turing-Maschine, die diesen Algorithmus implementiert und damit $L_1$ entscheidet. Geben Sie die Laufzeit Ihrer Turing-Maschine asymptotisch an. Ist $L_1$ in $\mathcal P$? Begr\"unden Sie gegebenenfalls, warum $L_1$ in $\mathcal P$ ist.
+\item Erst 2002 konnte gezeigt werden, dass das Problem \textit{PRIMES} in der Klasse $\mathcal P$ liegt. Weshalb folgt \textit{PRIMES} $\in \mathcal P$ nicht aus a)?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textcolor{KITblue}{Aufgabe}}
+Sei $\Pi$ ein Enscheidungsproblem \"uber der Menge der nat\"urlichen Zahlen (d.h. Instanzen des Problems k\"onnen als nat\"urliche Zahl kodiert werden). Zeigen Sie, dass $s_1$ und $s_2$  bez\"uglich $\Pi$ nicht \"aquivalent sind.
 \end{frame}
 
 \subsection{Nichtdeterministische Turingmaschinen}
@@ -1599,7 +1628,7 @@ Wir definieren eine nichtdeterministische Turingmaschine als Erweiterung einer d
  Wir erweiteren die TM um ein \textcolor{KITblue}{Orakelmodul}, das bevor der deterministischen Berechnung Zeichen auf das Band links von der Eingabe schreibt,
  danach verfährt die Maschine wie eine normale TM.
  Die NDTM akzeptiert genau die Wörter, für die es eine Ausgabe des Orakelmoduls gibt,
- sodass der deterministische Anteil der Machine das Wort akzeptiert.
+ sodass der deterministische Anteil der Maschine das Wort akzeptiert.
 \end{block}
 \end{frame}
 \begin{frame}
@@ -1642,6 +1671,14 @@ Ist $L_{10}^c$ in $\mathcal{NP}$? Begründen Sie gegebenenfalls, warum $L_{10}^c
 \textit{Hinweis:} Überlegen Sie sich, was Ihre Turing-Maschine in der Orakel-Phase sinnvollerweise auf das Band schreiben könnte.
 \end{frame}
 
+\begin{frame}
+	\frametitle{\textcolor{KITblue}{Bis zum nächsten Mal}}
+	\vspace{-1cm}
+	\begin{center}
+	\includegraphics[width=0.75\textwidth]{images/iloveyou.pdf}
+	\end{center}
+	\tiny{Quelle: \url{http://www.semiconfundive.de}}
+\end{frame}
 
 % Unentscheidbarkeit universelle Sprache
 \begin{frame}
